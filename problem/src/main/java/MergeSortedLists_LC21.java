@@ -1,6 +1,4 @@
-import java.util.Arrays;
-
-public class MergeSortedLists {
+public class MergeSortedLists_LC21 {
 
     public static void main(String[] args) {
     }

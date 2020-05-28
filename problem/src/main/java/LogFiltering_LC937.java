@@ -5,10 +5,10 @@ import java.util.Map;
 import java.util.PriorityQueue;
 import java.util.TreeMap;
 
-public class LogFiltering {
+public class LogFiltering_LC937 {
     public static void main(String[] args) {
         String[] inputLogs = {"dig1 8 1 5 1", "let1 art can", "dig2 3 6", "let2 own kit dig", "let3 art zero"};
-        System.out.println(Arrays.toString(LogFiltering.reorderLogFiles(inputLogs)));
+        System.out.println(Arrays.toString(LogFiltering_LC937.reorderLogFiles(inputLogs)));
     }
 
     public static String[] reorderLogFiles(String[] logs) {
