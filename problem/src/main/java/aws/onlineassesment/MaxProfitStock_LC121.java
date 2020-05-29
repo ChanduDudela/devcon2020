@@ -1,3 +1,5 @@
+package aws.onlineassesment;
+
 public class MaxProfitStock_LC121 {
 
     public static void main(String[] args) {
