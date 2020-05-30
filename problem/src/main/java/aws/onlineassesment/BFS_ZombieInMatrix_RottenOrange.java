@@ -21,7 +21,7 @@ public class BFS_ZombieInMatrix_RottenOrange {
         Queue<int[]> rottenOrangesQ = new LinkedList<>();
         int freshOranges = 0;
 
-        //pick the location of rotten oranges and put it in a Queue (BFS)
+        //pick the location of rotten oranges and put it in a Queue (BFS implementation)
         for (int i = 0; i < rows; i++) {
             for (int j = 0; j < columns; j++) {
                 if (grid[i][j] == 2) {
