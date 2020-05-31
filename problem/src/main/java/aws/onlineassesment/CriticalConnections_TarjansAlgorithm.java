@@ -4,6 +4,8 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
+//https://leetcode.com/discuss/interview-question/436073/
+//https://leetcode.com/problems/critical-connections-in-a-network/
 public class CriticalConnections_TarjansAlgorithm {
 
     private int time = 0;                       //discovery time
