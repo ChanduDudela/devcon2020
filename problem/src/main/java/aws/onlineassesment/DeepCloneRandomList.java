@@ -18,7 +18,7 @@ class Node {
     }
 }
 
-public class CopyRandomList {
+public class DeepCloneRandomList {
 
     public Node copyRandomList(Node head) {
         if (head == null) {
