@@ -33,20 +33,25 @@ public class MinSpanningTreeKruskalsAlgorithm {
     }
 
 
-    public int minimumCost(int N, int[][] connections) {
-        sets = N;
-        parent = new int[N+1];
+    public int minimumCost(int numOfNodes, int[][] connections) {
+        sets = numOfNodes;
+        parent = new int[numOfNodes+1];
 
-        for(int i=0; i<= N; i++){
+        //initialize. Each node's parent is itself
+        for(int i=0; i<= numOfNodes; i++){
             parent[i] = i;
         }
 
+        //sort edges by weight in ascending order
         Arrays.sort(connections, (a, b) -> (a[2] - b[2]));
 
         int minCost = 0;
 
         for(int[] connection: connections) {
-            if(findSet(connection[0]) != findSet(connection[1])) {
+            int setNode1BelongsTo = findSet(connection[0]);
+            int setNode2BelongsTo = findSet(connection[1]);
+
+            if(setNode1BelongsTo != setNode2BelongsTo) {
                 minCost= minCost + connection[2];
 
                 unionSets(connection[0], connection[1]);
