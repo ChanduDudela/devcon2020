@@ -2,7 +2,9 @@ package aws.onlineassesment;
 
 import java.util.Arrays;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
+import java.util.stream.Collectors;
 
 //https://leetcode.com/problems/prison-cells-after-n-days/
 public class PrisonCellsAfterNDays {
@@ -10,6 +12,9 @@ public class PrisonCellsAfterNDays {
     public int[] prisonAfterNDays(int[] cells, int N) {
 
         Set<String> uniqueStrings = new HashSet<>();
+
+        int[] cellsCopy = new int[cells.length+2];
+
 
         //counter to track which iteration the cycle is encountered
         int count = 0;

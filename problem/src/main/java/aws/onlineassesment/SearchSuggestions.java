@@ -5,6 +5,7 @@ import java.util.List;
 import java.util.PriorityQueue;
 import java.util.Queue;
 
+//https://leetcode.com/problems/search-suggestions-system/
 public class SearchSuggestions {
     public static void main(String[] args) {
         String[] products = {"mobile", "mouse", "moneypot", "monitor", "mousepad"};

@@ -4,6 +4,7 @@ import java.util.HashSet;
 import java.util.Set;
 
 //https://leetcode.com/problems/subarrays-with-k-different-integers/
+//TODO: Need to implement Sliding Window algorithm, below is brute force which gives TLE
 public class SubArrayWithKDiffIntegers {
 
     //This approach gives Time Limit Exceeded Exception in Leetcode

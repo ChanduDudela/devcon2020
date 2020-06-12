@@ -3,6 +3,7 @@ package aws.onlineassesment;
 import java.util.PriorityQueue;
 import java.util.Queue;
 
+//https://leetcode.com/problems/k-closest-points-to-origin/
 public class TopKClosestPointsToOrigin {
 
     public int[][] kClosest(int[][] points, int K) {

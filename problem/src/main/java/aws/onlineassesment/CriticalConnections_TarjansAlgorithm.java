@@ -37,8 +37,7 @@ public class CriticalConnections_TarjansAlgorithm {
 
     public void dfs(
         int rootNode, int parent, int[] discoveryTimeList, int[] lowKeyList, boolean[] visitedList,
-        List<Integer>[] graph,
-        List<List<Integer>> output) {
+        List<Integer>[] graph, List<List<Integer>> output) {
 
         visitedList[rootNode] = true;
         discoveryTimeList[rootNode] = ++time;

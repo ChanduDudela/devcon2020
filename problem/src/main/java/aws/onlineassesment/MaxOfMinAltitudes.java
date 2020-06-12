@@ -1,5 +1,6 @@
 package aws.onlineassesment;
 
+//https://leetcode.com/discuss/interview-question/383669/
 public class MaxOfMinAltitudes {
 
     public static void main(String[] args) {
