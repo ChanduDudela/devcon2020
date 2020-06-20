@@ -77,4 +77,44 @@ public class LongestPalindrome {
 
         return true;
     }
+
+
+
+    ///getting String out of bounds exception
+    public String longestPalindrome_Test(String s) {
+        if(s == null || s.length() == 0) {
+            return "";
+        }
+
+        int maxlength = 0;
+        String palindrome = "";
+
+        for(int i =0; i < s.length(); i++){
+            String x = findPalindrome(s, i, i);
+            String y = findPalindrome(s, i, i+1);
+
+            if(x.length() > y.length() && x.length() > maxlength){
+                palindrome = x;
+                maxlength = x.length();
+            } else if(y.length() > maxlength){
+                palindrome = y;
+                maxlength = y.length();
+            }
+        }
+
+        return palindrome;
+    }
+
+
+    private String findPalindrome(String s, int start, int end) {
+        while(start >= 0 && end < s.length() -1 && s.charAt(start) == s.charAt(end)){
+            start --;
+            end ++;
+        }
+
+        int begin = ++start;
+        // int e = --end;
+
+        return s.substring(begin, end);
+    }
 }
