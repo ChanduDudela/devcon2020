@@ -1,4 +1,4 @@
-package aws.interview;
+package aws.random.questions;
 
 import java.util.PriorityQueue;
 import java.util.Queue;

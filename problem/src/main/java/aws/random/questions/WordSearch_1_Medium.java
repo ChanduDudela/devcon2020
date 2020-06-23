@@ -1,6 +1,6 @@
 package aws.random.questions;
 
-class WordSearch {
+class WordSearch_1_Medium {
 
     private boolean[][] visited;
 
