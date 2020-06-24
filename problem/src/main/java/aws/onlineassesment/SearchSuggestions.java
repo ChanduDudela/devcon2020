@@ -13,7 +13,7 @@ public class SearchSuggestions {
         System.out.println(suggestedProducts(products, "mouse").toString());
     }
 
-    //Approach using PQ
+    //Brute force approach using PQ
     public static List<List<String>> suggestedProducts(String[] products, String searchWord) {
         List<List<String>> result = new ArrayList<>();
         Queue<String> queue = new PriorityQueue<>(3);
