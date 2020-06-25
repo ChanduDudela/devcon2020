@@ -69,6 +69,7 @@ public class CourseSchedule_TopologicalSort {
         Stack<Integer> orderedStack = new Stack<>();
         Set<Integer> visited = new HashSet<>();
 
+        //If invalid input, just return an array with numbers 0 to numCourses
         if (prerequisites.length == 0 && numCourses >= 0) {
             int[] resultArr = new int[numCourses];
 
