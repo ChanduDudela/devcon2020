@@ -3,7 +3,7 @@ package aws.random.questions;
 import java.util.HashMap;
 import java.util.Map;
 
-class LRUCache {
+class LRU_Cache {
 
     static class Entry {
         final int key;
@@ -35,7 +35,7 @@ class LRUCache {
     Entry end;
     int size;
 
-    public LRUCache(int capacity) {
+    public LRU_Cache(int capacity) {
         map = new HashMap<>(capacity);
         size = capacity;
     }
