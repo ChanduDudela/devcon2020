@@ -1,6 +1,8 @@
 package aws.onlineassesment;
 
 import java.util.Arrays;
+import java.util.HashMap;
+import java.util.Map;
 
 //https://leetcode.com/problems/two-sum/
 //https://leetcode.com/discuss/interview-question/356960
@@ -12,16 +14,23 @@ public class TwoSum {
         System.out.println(twoSum.twoSum_NoOfUniquePairs(new int[] {1, 1, 2, 45, 46, 46}, 47));
     }
 
-    //brute force - quadratic time O(n^2)
-    public int[] twoSum(int[] nums, int target) {
-        for (int i = 0; i < nums.length; i++) {
-            for (int j = i + 1; j < nums.length; j++) {
-                if (nums[i] + nums[j] == target) {
-                    return new int[] {i, j};
-                }
-            }
+    public int[] twoSum_With_Memoization(int[] nums, int target) {
+        if(nums.length == 0){
+            return new int[]{0};
         }
-        return new int[0];
+
+        //map of number to its index
+        Map<Integer, Integer> cache = new HashMap<>();
+
+        for(int i =0; i < nums.length; i++){
+            int diff = target - nums[i];
+            if(cache.containsKey(diff)){
+                return new int[]{i, cache.get(diff)};
+            }
+            cache.put(nums[i], i);
+        }
+
+        return new int[]{0};
     }
 
     //with O(n log n) time
@@ -96,5 +105,17 @@ public class TwoSum {
         }
 
         return result;
+    }
+
+    //brute force - quadratic time O(n^2)
+    public int[] twoSum(int[] nums, int target) {
+        for (int i = 0; i < nums.length; i++) {
+            for (int j = i + 1; j < nums.length; j++) {
+                if (nums[i] + nums[j] == target) {
+                    return new int[] {i, j};
+                }
+            }
+        }
+        return new int[0];
     }
 }
