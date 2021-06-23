@@ -1,1 +1,3 @@
-# Leetcode Solutions
+# Problem solutions from,
+- Leetcode
+- CTCI book
