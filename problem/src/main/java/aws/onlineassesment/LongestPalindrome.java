@@ -3,7 +3,7 @@ package aws.onlineassesment;
 //https://leetcode.com/problems/longest-palindromic-substring/
 public class LongestPalindrome {
 
-    int resultStart;
+    /* int resultStart;
     int resultLength;
 
     public String longestPalindrome(String s) {
@@ -32,89 +32,54 @@ public class LongestPalindrome {
             resultLength = end - begin -1;
             resultStart = ++begin;
         }
-    }
-    //
+    }*/
 
-    //Brute force
-    public String longestPalindrome_BruteForce(String s) {
-
-        if (s.length() == 1) {
+    public static String longestPalindrome(String s) {
+        if (s == null || s.length() < 2) {
             return s;
         }
 
-        String result = "";
+        int resultIndex =0;
+        int maxLength =0;
 
-        for (int i = 0; i < s.length(); i++) {
-            int j = s.length();
+        for (int i =0; i< s.length()-1; i++) {
+            Result res = getLongestPalindrome(s, i, i);
+            Result res2 = getLongestPalindrome(s, i, i+1);
 
-            while (j > i) {
-                String sub = s.substring(i, j);
-                if (isPalindrome(sub)) {
-                    if (result.length() < j - i + 1) {
-                        result = sub;
-                        break;
-                    }
-                }
-                j--;
+            if (res.length > maxLength) {
+                maxLength = res.length;
+                resultIndex = res.beginIndex;
+            }
+            if (res2.length > maxLength) {
+                maxLength = res2.length;
+                resultIndex = res2.beginIndex;
             }
         }
 
-        return result;
+
+        return s.substring(resultIndex, resultIndex + maxLength+1);
     }
 
-    public boolean isPalindrome(String str) {
-        int i = 0;
-        int j = str.length() - 1;
-
-        while (i < j) {
-            if (str.charAt(i) != str.charAt(j)) {
-                return false;
-            }
-
-            i++;
-            j--;
+    static Result getLongestPalindrome(String s, int start, int end) {
+        while (start >= 0 && end < s.length() && s.charAt(start) == s.charAt(end)) {
+            start--;
+            end++;
         }
-
-        return true;
+        return new Result(++start, end-start-1);
     }
 
 
+    static class Result {
+        int beginIndex;
+        int length;
 
-    ///getting String out of bounds exception
-    public String longestPalindrome_Test(String s) {
-        if(s == null || s.length() == 0) {
-            return "";
+        Result (int beginIndex, int length) {
+            this.beginIndex = beginIndex;
+            this.length = length;
         }
-
-        int maxlength = 0;
-        String palindrome = "";
-
-        for(int i =0; i < s.length(); i++){
-            String x = findPalindrome(s, i, i);
-            String y = findPalindrome(s, i, i+1);
-
-            if(x.length() > y.length() && x.length() > maxlength){
-                palindrome = x;
-                maxlength = x.length();
-            } else if(y.length() > maxlength){
-                palindrome = y;
-                maxlength = y.length();
-            }
-        }
-
-        return palindrome;
     }
 
-
-    private String findPalindrome(String s, int start, int end) {
-        while(start >= 0 && end < s.length() -1 && s.charAt(start) == s.charAt(end)){
-            start --;
-            end ++;
-        }
-
-        int begin = ++start;
-        // int e = --end;
-
-        return s.substring(begin, end);
+    public static void main(String[] args) {
+        System.out.println(LongestPalindrome.longestPalindrome("cbbddbbc"));
     }
 }

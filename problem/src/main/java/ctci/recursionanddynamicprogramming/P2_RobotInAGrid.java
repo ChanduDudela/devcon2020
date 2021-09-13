@@ -1,6 +1,7 @@
 package ctci.recursionanddynamicprogramming;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.HashSet;
 import java.util.LinkedList;
 import java.util.List;
@@ -122,5 +123,43 @@ public class P2_RobotInAGrid {
 
         duplicatesSet.add(p);
         return false;
+    }
+
+    // recursive with memoization
+
+    public int uniquePathsWithObstacles(int[][] grid) {
+        if(grid==null || grid.length==0) return 0;
+
+        int rows = grid.length;
+        int cols = grid[0].length;
+
+        int memo[][] = new int[rows][cols];
+        for (int[] row: memo) {
+            Arrays.fill(row, -1);
+        }
+
+        return dfs(grid,0,0, memo);
+    }
+
+    public int dfs(int grid[][],int i,int j, int memo[][]){
+        if(i<0 || j<0 || i>=grid.length || j>=grid[0].length || grid[i][j]==1) {
+            return 0;
+        }
+
+        if(i==grid.length-1 && j==grid[0].length-1){
+            return 1;
+        }
+
+        if (memo[i][j] != -1) {
+            return memo[i][j];
+        }
+
+        memo[i][j] = dfs(grid,i+1,j, memo) + dfs(grid,i,j+1, memo);
+        return memo[i][j];
+    }
+
+    public static void main(String[] args) {
+        int[][] input = new int[][]{{0,0,0},{0,1,0},{0,0,0}};
+        System.out.println(new P2_RobotInAGrid().uniquePathsWithObstacles(input));
     }
 }
