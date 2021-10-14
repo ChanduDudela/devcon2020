@@ -55,8 +55,6 @@ public class LongestPalindrome {
                 resultIndex = res2.beginIndex;
             }
         }
-
-
         return s.substring(resultIndex, resultIndex + maxLength+1);
     }
 
@@ -67,7 +65,6 @@ public class LongestPalindrome {
         }
         return new Result(++start, end-start-1);
     }
-
 
     static class Result {
         int beginIndex;

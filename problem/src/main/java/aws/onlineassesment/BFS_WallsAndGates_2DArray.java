@@ -1,6 +1,5 @@
 package aws.onlineassesment;
 
-import java.util.ArrayDeque;
 import java.util.LinkedList;
 import java.util.Queue;
 
@@ -8,9 +7,9 @@ import java.util.Queue;
 public class BFS_WallsAndGates_2DArray {
     public static void main(String[] args) {
         int[][] grid = {{2147483647, -1, 0, 2147483647},
-                        {2147483647, 2147483647, 2147483647, -1},
-                        {2147483647, -1, 2147483647, -1},
-                        {0, -1, 2147483647, 2147483647}};
+            {2147483647, 2147483647, 2147483647, -1},
+            {2147483647, -1, 2147483647, -1},
+            {0, -1, 2147483647, 2147483647}};
 
         wallsAndGates(grid);
     }
@@ -28,9 +27,9 @@ public class BFS_WallsAndGates_2DArray {
 
         for (int i = 0; i < rows; i++) {
             for (int j = 0; j < columns; j++) {
-                if(grid[i][j] == 0) {
-                    gatesQ.offer(new int[]{i, j});
-                } else if (grid[i][j] == 2147483647){
+                if (grid[i][j] == 0) {
+                    gatesQ.offer(new int[] {i, j});
+                } else if (grid[i][j] == 2147483647) {
                     ++emptyRooms;
                 }
             }
@@ -41,7 +40,7 @@ public class BFS_WallsAndGates_2DArray {
         }
         int[][] direction = {{0, 1}, {0, -1}, {-1, 0}, {1, 0}};
 
-        while(!gatesQ.isEmpty()){
+        while (!gatesQ.isEmpty()) {
             int size = gatesQ.size();
 
             for (int i = 0; i < size; i++) {
@@ -50,11 +49,11 @@ public class BFS_WallsAndGates_2DArray {
                     int x = dir[0] + gateIndex[0];
                     int y = dir[1] + gateIndex[1];
 
-                    if(x < 0 || y < 0 || x >= rows || y >= columns || grid[x][y] != 2147483647){
+                    if (x < 0 || y < 0 || x >= rows || y >= columns || grid[x][y] != 2147483647) {
                         continue;
                     }
                     grid[x][y] = grid[gateIndex[0]][gateIndex[1]] + 1;
-                    gatesQ.offer(new int[]{x,y});
+                    gatesQ.offer(new int[] {x, y});
                 }
             }
         }

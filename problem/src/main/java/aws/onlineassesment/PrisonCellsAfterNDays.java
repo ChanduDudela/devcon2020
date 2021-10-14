@@ -13,9 +13,6 @@ public class PrisonCellsAfterNDays {
 
         Set<String> uniqueStrings = new HashSet<>();
 
-        int[] cellsCopy = new int[cells.length+2];
-
-
         //counter to track which iteration the cycle is encountered
         int count = 0;
         boolean hasCycle = false;

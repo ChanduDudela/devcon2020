@@ -7,6 +7,30 @@ import java.util.Map;
 
 //https://leetcode.com/discuss/interview-question/373006
 public class FavouriteGenre {
+    /*
+        invert map: song -> genre
+        groupby: user -> [genre, [song]]
+        count: user -> [genre, count]
+        select having=max: user -> [genre]
+
+        Input:
+        userSongs = {
+           "David": ["song1", "song2", "song3", "song4", "song8"],
+           "Emma":  ["song5", "song6", "song7"]
+        },
+        songGenres = {
+           "Rock":    ["song1", "song3"],
+           "Dubstep": ["song7"],
+           "Techno":  ["song2", "song4"],
+           "Pop":     ["song5", "song6"],
+           "Jazz":    ["song8", "song9"]
+        }
+
+        Output: {
+           "David": ["Rock", "Techno"],
+           "Emma":  ["Pop"]
+        }
+     */
 
     public Map<String, List<String>> getFavouriteGenre(
         Map<String, List<String>> userMap, Map<String, List<String>> genreMap) {

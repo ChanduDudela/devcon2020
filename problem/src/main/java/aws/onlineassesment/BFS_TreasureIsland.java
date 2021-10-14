@@ -13,10 +13,11 @@ public class BFS_TreasureIsland {
         Queue<int[]> pathList = new LinkedList<>();
         pathList.add(new int[] {0, 0});
 
-        int steps = 0;
-        int[][] directions = {{0, 1}, {0, -1}, {-1, 0}, {1, 0}};
         boolean[][] visitedArray = new boolean[rows][cols];
         visitedArray[0][0] = true;
+
+        int steps = 0;
+        int[][] directions = {{0, 1}, {0, -1}, {-1, 0}, {1, 0}};
 
         while (!pathList.isEmpty()) {
             int size = pathList.size();

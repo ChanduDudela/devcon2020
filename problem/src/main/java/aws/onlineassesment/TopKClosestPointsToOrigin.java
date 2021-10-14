@@ -6,25 +6,28 @@ import java.util.Queue;
 //https://leetcode.com/problems/k-closest-points-to-origin/
 public class TopKClosestPointsToOrigin {
 
-    public int[][] kClosest(int[][] points, int K) {
-        Queue<int[]> pq = new PriorityQueue<>(
-            (p1, p2) -> (p2[0] * p2[0] + p2[1] * p2[1]) - (p1[0] * p1[0] + p1[1] * p1[1]));
+    public int[][] kClosest(int[][] points, int k) {
+        Queue<int[]> maxheap = new PriorityQueue<>((a, b) -> getDistance(b) - getDistance(a));
 
-        for (int[] point : points) {
-            pq.offer(point);
+        for (int[] point: points) {
+            maxheap.offer(point);
 
-            if (pq.size() > K) {
-                pq.poll();
+            if (maxheap.size() > k) {
+                maxheap.poll();
             }
         }
 
-        int[][] result = new int[K][2];
+        int size = maxheap.size();
+        int[][] res = new int[size][2];
 
-        while (!pq.isEmpty() && K > 0) {
-            result[K - 1] = pq.poll();
-            K--;
+        for (int i =0; i < size; i++) {
+            res[i] = maxheap.poll();
         }
 
-        return result;
+        return res;
+    }
+
+    private int getDistance (int[] point) {
+        return point[0] * point[0] + point[1] * point[1];
     }
 }

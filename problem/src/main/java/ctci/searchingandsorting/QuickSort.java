@@ -1,7 +1,7 @@
 package ctci.searchingandsorting;
 
 public class QuickSort {
-    // pick a random partition element in the arr
+    // pick a questions.random partition element in the arr
     // all elements left of partition element should be less than partition element
     // all elements right of partition element should be greater than partition element
     // repeating this task multiple times will make the arr sorted.

@@ -37,7 +37,7 @@ public class SubArrayWithKDiffIntegers {
         return count;
     }
 
-    //Find Longest Continuous Increasing Subsequence In An Array - Problem #674
+    //Find the count of Longest Continuous Increasing Subsequence In An Array - Problem #674
     //https://leetcode.com/problems/longest-continuous-increasing-subsequence/
     public int LongestContinuousIncreasingSubsequenceInAnArray(int[] arr) {
 

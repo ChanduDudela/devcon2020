@@ -26,6 +26,8 @@ public class DeepCloneListWithRandomPointer {
         }
 
         Node headRef = head;
+        Node headRefCopy = head;
+
         Map<Node, Node> cloneMap = new HashMap<>();
 
         //loop and put node with value as its cloned node
@@ -34,14 +36,14 @@ public class DeepCloneListWithRandomPointer {
             head = head.next;
         }
 
-        for (Map.Entry<Node, Node> entry : cloneMap.entrySet()) {
-            Node next = entry.getKey().next;
-            entry.getValue().next = cloneMap.get(next);
+        while (headRef != null) {
+            Node clone = cloneMap.get(headRef);
+            clone.next = cloneMap.get(headRef.next);
+            clone.random = cloneMap.get(headRef.random);
 
-            Node random = entry.getKey().random;
-            entry.getValue().random = cloneMap.get(random);
+            headRef = headRef.next;
         }
 
-        return cloneMap.get(headRef);
+        return cloneMap.get(headRefCopy);
     }
 }
