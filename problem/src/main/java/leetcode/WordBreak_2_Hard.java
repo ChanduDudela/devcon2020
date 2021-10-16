@@ -33,7 +33,7 @@ public class WordBreak_2_Hard {
             String left = s.substring(0, i);
             String right = s.substring(i);
 
-            if(wordDict.contains(left) && containsSuffix(wordDict, right)) {
+            if(wordDict.contains(left)) { // && containsSuffix(wordDict, right)) { // for more optimization
                 List<String> rightStrResponse = wordBreak(right, wordDict);
 
                 // for each right subtree result, push it into the array

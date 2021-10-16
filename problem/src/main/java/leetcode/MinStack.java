@@ -6,10 +6,10 @@ import java.util.Stack;
 class MinStack {
 
     //main stack to store numbers
-    private Stack<Integer> mainStack;
+    private final Stack<Integer> mainStack;
 
-    //stack to main the min number at 0th index and its count at 1st index
-    private Stack<int[]> minStack;
+    //stack to maintain the minimum number at 0th index and its count at 1st index
+    private final Stack<int[]> minStack;
 
     public MinStack() {
         mainStack = new Stack<>();

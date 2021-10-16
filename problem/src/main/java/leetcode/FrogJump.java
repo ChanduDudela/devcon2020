@@ -24,7 +24,7 @@ public class FrogJump {
 
         //add 1st stone and the first jump be 0
         positions.add(0);
-        jumps.add(0);
+        jumps.add(1);
 
         while(!positions.isEmpty()){
             //pop the current position

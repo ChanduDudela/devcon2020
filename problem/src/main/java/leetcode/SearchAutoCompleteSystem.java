@@ -53,7 +53,7 @@ public class SearchAutoCompleteSystem {
         if(c == '#') {
             buildTrie(prefix, 1);
             prefix = "";
-            return new ArrayList<String>();
+            return new ArrayList<>();
         }
 
         prefix = prefix + c;
@@ -65,7 +65,7 @@ public class SearchAutoCompleteSystem {
             Trie node = currNode.children.get(ch);
 
             if(node == null){
-                return new ArrayList<String>();
+                return new ArrayList<>();
             }
 
             currNode = node;

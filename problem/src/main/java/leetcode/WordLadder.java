@@ -8,7 +8,7 @@ import java.util.Set;
 
 class WordLadder {
     public int ladderLength(String beginWord, String endWord, List<String> wordList) {
-        if(beginWord == null || endWord == null || wordList.size() == 0){
+        if (beginWord == null || endWord == null || wordList.size() == 0) {
             return 0;
         }
 
@@ -20,36 +20,35 @@ class WordLadder {
         int count = 1;
         int size;
 
-        while(!queue.isEmpty()){
+        while (!queue.isEmpty()) {
             size = queue.size();
 
             // FOR ALL WORDS THIS ROUND
-            for(int i=0; i < size; i++){
+            for (int i = 0; i < size; i++) {
                 String str = queue.poll();
 
                 char[] charArr = str.toCharArray();
 
                 // TRAVERSE CURRENT WORD
-                for(int j=0; j< charArr.length; j++){
+                for (int j = 0; j < charArr.length; j++) {
                     char temp = charArr[j];
 
                     // CHANGE ONE LETTER AT A TIME
-                    for(char c='a'; c <= 'z'; c++) {
+                    for (char c = 'a'; c <= 'z'; c++) {
                         charArr[j] = c;
 
                         String newStr = String.valueOf(charArr);
 
                         // WHEN NEXT WORD IS IN THE SET
-                        if(wordListSet.contains(newStr)){
+                        if (wordListSet.contains(newStr)) {
 
-                            if(newStr.equals(endWord)){
-                                return count+1;
+                            if (newStr.equals(endWord)) {
+                                return count + 1;
                             }
 
                             wordListSet.remove(newStr);
                             queue.offer(newStr);
                         }
-
                     }
 
                     // HAVE TO UNDO FOR NEXT CHANGE OF LETTER

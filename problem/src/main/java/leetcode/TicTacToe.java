@@ -1,5 +1,6 @@
 package leetcode;
 
+//https://ttzztt.gitbooks.io/lc/content/design-tic-tac-toe.html
 public class TicTacToe {
 
     /** Initialize your data structure here. */
@@ -11,7 +12,8 @@ public class TicTacToe {
     int topRightToLeft;
     int boardSize;
 
-
+    // rows - [0,0,0,0..], 0th index represents 0th row
+    // cols - [0,0,0,0..], 0th index represents 0th column
     public TicTacToe(int boardSize) {
         rows = new int[boardSize];
         cols = new int[boardSize];

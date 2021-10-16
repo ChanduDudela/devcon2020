@@ -18,7 +18,7 @@ public class CourseSchedule_TopologicalSort {
         Map<Integer, Integer> inDegree = new HashMap<>();
         Map<Integer, List<Integer>> adjListMap = new HashMap<>();
 
-        for(int i=0; i < numCourses; i++){
+        for (int i = 0; i < numCourses; i++) {
             inDegree.put(i, 0);
             adjListMap.put(i, new ArrayList<>());
         }

@@ -17,10 +17,12 @@ public class BinaryTree_RightPointers {
 		while(!que.isEmpty()){
 			int size = que.size();
 
+			// this size is the count of all nodes at the same level
 			for(int i =0; i < size; i++){
 				Node node = que.poll();
 
-				if(i < size-1){
+				// updating next pointer for all nodes except the right most node (size-1)
+				if (i < size - 1) {
 					node.next = que.peek();
 				}
 

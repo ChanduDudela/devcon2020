@@ -32,7 +32,9 @@ public class SlidingWindowMaximum {
     }
 
 
-    /* Using Deque - O(N) linear solution */
+    /* Using Deque - O(N) linear solution
+    *  Explanation - https://www.youtube.com/watch?v=DfljaUwZsOk
+    * */
     public int[] maxSlidingWindow(int[] nums, int k) {
         if (nums == null || nums.length == 0 || k > nums.length) {
             return new int[] {0};

@@ -10,15 +10,15 @@ class PrintCurrency {
 
     int strLength = str.length();
 
-    String result= "";
+    StringBuilder result= new StringBuilder();
 
     for (int i = 0; i < strLength; i++) {
       if ((strLength-i) % 3 == 0 && i != 0){
-        result += ",";
+        result.append(",");
       }
-      result += str.charAt(i);
+      result.append(str.charAt(i));
     }
 
-    return result;
+    return result.toString();
   }
 }
