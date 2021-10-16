@@ -1,11 +1,11 @@
-package core.algorithms;
+package leetcode;
 
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.LinkedList;
 import java.util.Queue;
 
-public class BFS_DFS_Graph {
+public class BfsAndDfsGraphTraversal {
 
     //Helper HashMap to maintain index of all nodes in the graph
     HashMap<Integer, Node> nodeLookup = new HashMap<>();

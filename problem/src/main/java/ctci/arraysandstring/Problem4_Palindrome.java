@@ -16,9 +16,8 @@ public class Problem4_Palindrome {
             if(arr[str.charAt(i)] % 2 == 1) {
                 if (check) {
                     return false;
-                } else {
-                    check = true;
                 }
+                check = true;
             }
         }
         return true;

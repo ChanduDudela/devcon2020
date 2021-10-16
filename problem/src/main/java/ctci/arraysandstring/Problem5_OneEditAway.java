@@ -26,6 +26,7 @@ public class Problem5_OneEditAway {
     }
 
     //first is smaller, second is bigger string
+    @SuppressWarnings("IfStatementWithIdenticalBranches")
     private static boolean oneEditInsert(String first, String second) {
         int index1 = 0;
         int index2 = 0;

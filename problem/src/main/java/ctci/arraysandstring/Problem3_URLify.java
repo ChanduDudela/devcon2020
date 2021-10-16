@@ -36,7 +36,7 @@ public class Problem3_URLify {
     }
 
     public static void main(String[] args) {
-        char[] arr = new char[11];
+        char[] arr = new char[17];
         arr[0] = 'M';
         arr[1] = 'r';
         arr[2] = ' ';
@@ -45,11 +45,13 @@ public class Problem3_URLify {
         arr[5] = 'h';
         arr[6] = 'n';
         arr[7] = ' ';
-        arr[8] = ' ';
-        arr[9] = ' ';
-        arr[10] = ' ';
+        arr[8] = 'S';
+        arr[9] = 'M';
+        arr[10] = 'I';
+        arr[11] = 'T';
+        arr[12] = 'H';
 
 
-        System.out.println(Problem3_URLify.getUrl(arr, 7));
+        System.out.println(Problem3_URLify.getUrl(arr, 13));
     }
 }
