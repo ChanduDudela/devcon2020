@@ -1,6 +1,6 @@
 package ctci.treesandgraphs;
 
-// https://youtu.be/5cPbNCrdotA?t=242
+// https://youtu.be/5cPbNCrdotA?t=416
 public class P6_Successor {
 
     TreeNode findSuccessor(TreeNode node) {
@@ -11,7 +11,7 @@ public class P6_Successor {
             return findLeftMostNode(node.right);
         } else {
             // left sub tree is already covered and right sub tree doesn't exist,
-            // so, successor would be the ancestor for which this current node is left child.
+            // so, successor would be the ancestor for which this current node is in left subtree.
             while (node.parent != null && node.parent.left != node) {
                 node = node.parent;
                 node.parent = node.parent.parent;
