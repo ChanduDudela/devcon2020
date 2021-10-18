@@ -1,6 +1,6 @@
 package ctci.searchingandsorting;
 
-public class SortedMatrixSearch {
+public class P9_SortedMatrixSearch {
     public static void main(String[] args) {
         int[][] grid =
             {{15, 20, 70, 85},
@@ -8,7 +8,7 @@ public class SortedMatrixSearch {
             {30, 55, 9, 105},
             {40, 80, 100, 120}};
 
-        System.out.println(new SortedMatrixSearch().findElement(grid, 121));
+        System.out.println(new P9_SortedMatrixSearch().findElement(grid, 121));
     }
 
     public boolean findElement(int[][] grid, int element) {

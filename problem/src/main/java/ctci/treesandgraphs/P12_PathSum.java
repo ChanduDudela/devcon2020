@@ -7,9 +7,8 @@ public class P12_PathSum {
         if (root == null) {
             return 0;
         }
-        findPathsWithGivenSumFromRoot(root, 0, targetSum);
 
-        int countFromRoot = findPathsWithGivenSum(root, targetSum);
+        int countFromRoot = findPathsWithGivenSumFromRoot(root, 0, targetSum);
         int countFromRootLeft = findPathsWithGivenSum(root.left, targetSum);
         int countFromRootRight = findPathsWithGivenSum(root.right, targetSum);
 

@@ -10,8 +10,8 @@ public class MyQueue<T> {
         }
     }
 
-    StackNode first;
-    StackNode last;
+    StackNode<T> first;
+    StackNode<T> last;
 
     // a -> b -> c
     //fist       last
@@ -34,7 +34,7 @@ public class MyQueue<T> {
             val = (T) first.value;
             first = first.next;
         } else {
-            last = first;
+            last = null;
         }
         return val;
     }

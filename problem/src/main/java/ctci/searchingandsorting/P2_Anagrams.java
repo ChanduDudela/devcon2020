@@ -6,7 +6,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-public class Anagrams {
+public class P2_Anagrams {
     String[] sortByAnagrams(String[] strArray) {
         if(strArray == null || strArray.length == 0){
             return strArray;

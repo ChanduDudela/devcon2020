@@ -9,7 +9,6 @@ public class P9_GenerateValidParans {
         return getValidParenthesis(n, cache);
     }
 
-
     Set<String> getValidParenthesis(int n, HashSet<String> cache) {
         if (n == 0) {
             cache.add("");
@@ -28,7 +27,6 @@ public class P9_GenerateValidParans {
                     cache.add(newStr);
                 }
             }
-
         }
         return cache;
     }

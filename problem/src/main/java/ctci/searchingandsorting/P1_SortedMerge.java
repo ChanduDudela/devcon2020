@@ -1,6 +1,6 @@
 package ctci.searchingandsorting;
 
-public class SortedMerge {
+public class P1_SortedMerge {
 
     //
     int[] mergeSortedArrays(int a[], int b[], int aCount, int bCount) {

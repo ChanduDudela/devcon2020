@@ -1,7 +1,11 @@
 package ctci.recursionanddynamicprogramming;
 
 public class P11_Coins {
-
+    //     25c, 10c, 5c, 1c
+    //  1 [   ,    ,   ,   ]
+    //  2 [                ]
+    //  3 [                ]
+    //  4 [                ]
     int makeChange(int total, int[] denoms) {
         //cache
         int[][] cache = new int[total + 1][denoms.length];

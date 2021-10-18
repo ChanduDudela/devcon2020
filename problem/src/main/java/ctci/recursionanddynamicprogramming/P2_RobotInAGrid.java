@@ -126,7 +126,6 @@ public class P2_RobotInAGrid {
     }
 
     // recursive with memoization
-
     public int uniquePathsWithObstacles(int[][] grid) {
         if(grid==null || grid.length==0) return 0;
 

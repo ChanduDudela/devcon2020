@@ -1,6 +1,6 @@
 package ctci.searchingandsorting;
 
-public class MergeSort {
+public class P0_MergeSort {
     // split array by half and for each sub-array -
         // sort the sub-arrays and merge them back together
 

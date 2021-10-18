@@ -21,10 +21,6 @@ public class ValidT9Words {
             return children[ch - 'a'];
         }
 
-        public void setEnd() {
-            isEnd = true;
-        }
-
         public boolean isEnd() {
             return isEnd;
         }

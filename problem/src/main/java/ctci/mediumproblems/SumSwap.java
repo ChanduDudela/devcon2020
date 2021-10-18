@@ -35,6 +35,11 @@ public class SumSwap {
         return arr2Hash;
     }
 
+    /**
+     * We are looking for 2 values a, b such that,
+     *  sumA - a + b = SumB + a - b
+     *  (a-b) = (sumA - sumB) / 2
+     */
     Integer getTargetValue (int[] arr1, int[] arr2) {
         int arr1Sum = sum(arr1);
         int arr2Sum = sum(arr2);

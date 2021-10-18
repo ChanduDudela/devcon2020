@@ -7,7 +7,7 @@ public class P1_ThreeStacksInSingleArray {
     int numOfStacks = 3;
 
     public P1_ThreeStacksInSingleArray(int eachStackCapacity) {
-        eachStackCapacity = eachStackCapacity;
+        this.eachStackCapacity = eachStackCapacity;
         values = new int[eachStackCapacity * numOfStacks];
         stacksSize = new int[numOfStacks];
     }

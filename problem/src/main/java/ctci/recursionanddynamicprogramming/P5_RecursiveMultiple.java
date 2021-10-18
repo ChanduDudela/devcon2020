@@ -9,20 +9,20 @@ public class P5_RecursiveMultiple {
         return multiplyRecursive(smaller, bigger);
     }
 
-    int multiplyRecursive (int a, int b) {
-        if (a == 0 || b == 0) {
+    int multiplyRecursive (int smaller, int bigger) {
+        if (smaller == 0 || bigger == 0) {
             return 0;
-        } else if (a == 1) {
-            return b;
+        } else if (smaller == 1) {
+            return bigger;
         }
 
-        int c = a / 2;
-        int side1 = multiplyRecursive(c, b);
+        int c = smaller / 2;
+        int side1 = multiplyRecursive(c, bigger);
         int side2 = side1;
 
-        boolean aIsOdd = a % 2 == 1;
+        boolean aIsOdd = smaller % 2 == 1;
         if (aIsOdd) {
-            side2 = multiplyRecursive(a - c, b);
+            side2 = multiplyRecursive(smaller - c, bigger);
         }
 
         return side1 + side2;
@@ -39,12 +39,12 @@ public class P5_RecursiveMultiple {
         }
 
         int c = smaller / 2;
-        int side1 = multiplyRecursive(c, bigger);
+        int side1 = multiplyRecursiveMemoization(c, bigger, memo);
         int side2 = side1;
 
         boolean aIsOdd = smaller % 2 == 1;
         if (aIsOdd) {
-            side2 = multiplyRecursive(smaller - c, bigger);
+            side2 = multiplyRecursiveMemoization(smaller - c, bigger, memo);
         }
 
         memo[smaller] = side1 + side2;

@@ -1,6 +1,6 @@
 package ctci.searchingandsorting;
 
-public class RankFromStream {
+public class P10_RankFromStream {
     RankNode root = null;
 
     void track (int x) {
@@ -15,7 +15,7 @@ public class RankFromStream {
         return root != null ? root.getRank(x) : -1;
     }
 
-    class RankNode {
+    static class RankNode {
         int leftSize  = 0;
         int val;
         RankNode right;

@@ -51,12 +51,12 @@ public class P3_MagicIndex {
         }
 
         int leftIndex = Math.min(midIndex - 1, midValue);
-        int left = getMagicIndexDistinctNumbers(arr, startIndex, leftIndex);
+        int left = getMagicIndexNonDistinctNumbers(arr, startIndex, leftIndex);
         if (left > 0) {
             return left;
         }
 
         int rightIndex = Math.max(midIndex + 1, midValue);
-        return getMagicIndexDistinctNumbers(arr, rightIndex, endIndex);
+        return getMagicIndexNonDistinctNumbers(arr, rightIndex, endIndex);
     }
 }

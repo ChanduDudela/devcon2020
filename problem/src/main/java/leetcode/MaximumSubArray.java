@@ -7,7 +7,6 @@ public class MaximumSubArray {
         int size = nums.length;
         int max = nums[0];
 
-
         int[] dp = new int[size];
         dp[0] = nums[0];
 

@@ -3,7 +3,7 @@ package ctci.mediumproblems;
 public class Operations {
 
     int negate(int a) {
-        int sym = a < 0 ? -1 : 1;
+        int sym = a > 0 ? -1 : 1;
         int negated=0;
         while(a != 0){
             a += sym;

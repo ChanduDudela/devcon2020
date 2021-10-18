@@ -21,7 +21,11 @@ public class P4_QueueViaStacks {
     }
 
     public boolean isEmpty() {
-        return stackNewest.empty();
+        return stackNewest.empty() && stackOldest.isEmpty();
+    }
+
+    public int size() {
+        return stackNewest.size() + stackOldest.size();
     }
 
     private void transfer() {

@@ -1,6 +1,6 @@
 package ctci.searchingandsorting;
 
-public class SparseSearch {
+public class P5_SparseSearch {
     int search(String[] strings, String element) {
         if (strings == null || strings.length == 0 || element.equals("")) {
             return -1;

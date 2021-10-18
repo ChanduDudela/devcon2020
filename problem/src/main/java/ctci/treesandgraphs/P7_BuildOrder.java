@@ -52,10 +52,9 @@ public class P7_BuildOrder {
 
         if(adjList.containsKey(project)) {
             for(String dependent: adjList.get(project)) {
-                if (visitedSet.contains(dependent)) {
-                    continue;
+                if (!visitedSet.contains(dependent)) {
+                    processChildren(dependent, adjList, visitedSet, orderStack);
                 }
-                processChildren(dependent, adjList, visitedSet, orderStack);
             }
         }
 

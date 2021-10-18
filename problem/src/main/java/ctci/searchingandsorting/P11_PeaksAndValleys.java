@@ -2,7 +2,7 @@ package ctci.searchingandsorting;
 
 import java.util.Arrays;
 
-public class PeaksAndValleys {
+public class P11_PeaksAndValleys {
     void sortForPeaksAndValleys(int[] arr) {
         Arrays.sort(arr);
 

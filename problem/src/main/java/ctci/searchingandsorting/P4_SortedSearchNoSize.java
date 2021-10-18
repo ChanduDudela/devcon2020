@@ -1,7 +1,7 @@
 package ctci.searchingandsorting;
 
-public class SortedSearchNoSize {
-    class Listy {
+public class P4_SortedSearchNoSize {
+    static class Listy {
         int[] arr;
 
         Listy() {

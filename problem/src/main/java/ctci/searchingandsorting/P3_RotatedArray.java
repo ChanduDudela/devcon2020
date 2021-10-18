@@ -1,6 +1,6 @@
 package ctci.searchingandsorting;
 
-public class RotatedArray {
+public class P3_RotatedArray {
     int search(int arr[], int k) {
         return search(arr, k, 0, arr.length-1);
     }
