@@ -4,7 +4,6 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-//https://leetcode.com/discuss/interview-question/436073/
 //https://leetcode.com/problems/critical-connections-in-a-network/
 public class CriticalConnections_TarjansAlgorithm {
 
@@ -61,7 +60,7 @@ public class CriticalConnections_TarjansAlgorithm {
                 }
             } else {
                 lowKeyList[rootNode] =
-                    Math.min(lowKeyList[rootNode], discoveryTimeList[adjacentNode]);
+                    Math.min(lowKeyList[rootNode], lowKeyList[adjacentNode]);
             }
         }
     }

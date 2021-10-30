@@ -21,14 +21,14 @@ public class LFU_Cache {
     int capacity;
     Map<Integer, Entry> keyToEntryMap;
     Map<Integer, LinkedHashSet<Entry>> freqToEntryMap;
-    int minSize;
+    int leastFrequency;
 
     public LFU_Cache(int capacity) {
         this.capacity = capacity;
         keyToEntryMap = new HashMap<>();
         freqToEntryMap = new HashMap<>();
 
-        minSize = 0;
+        leastFrequency = 0;
     }
 
     public int get(int key) {
@@ -40,9 +40,9 @@ public class LFU_Cache {
 
         freqToEntryMap.get(entry.frequency).remove(entry);
 
-        if (entry.frequency == minSize && freqToEntryMap.get(entry.frequency).isEmpty()) {
+        if (entry.frequency == leastFrequency && freqToEntryMap.get(entry.frequency).isEmpty()) {
             freqToEntryMap.remove(entry.frequency);
-            minSize++;
+            leastFrequency++;
         }
 
         entry.frequency++;
@@ -70,23 +70,23 @@ public class LFU_Cache {
 
         if (keyToEntryMap.size() == capacity) {
 
-            Entry entryWithMinFreq = freqToEntryMap.get(minSize).iterator().next();
-            freqToEntryMap.get(minSize).remove(entryWithMinFreq);
+            Entry entryWithMinFreq = freqToEntryMap.get(leastFrequency).iterator().next();
+            freqToEntryMap.get(leastFrequency).remove(entryWithMinFreq);
 
             keyToEntryMap.remove(entryWithMinFreq.key);
 
-            if (freqToEntryMap.get(minSize).size() == 0) {
-                freqToEntryMap.remove(minSize);
+            if (freqToEntryMap.get(leastFrequency).size() == 0) {
+                freqToEntryMap.remove(leastFrequency);
             }
         }
 
         Entry newEntry = new Entry(key, value);
-        minSize = 1;
+        leastFrequency = 1;
 
         keyToEntryMap.put(key, newEntry);
-        if (!freqToEntryMap.containsKey(minSize)) {
-            freqToEntryMap.put(minSize, new LinkedHashSet<>());
+        if (!freqToEntryMap.containsKey(leastFrequency)) {
+            freqToEntryMap.put(leastFrequency, new LinkedHashSet<>());
         }
-        freqToEntryMap.get(minSize).add(newEntry);
+        freqToEntryMap.get(leastFrequency).add(newEntry);
     }
 }
