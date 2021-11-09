@@ -15,9 +15,9 @@ public class WordBreak {
 
         dp[0] = true;
 
-        for(int i =1; i <= s.length(); i++){
+        for (int i = 1; i <= s.length(); i++) {
             for (int j = 0; j < i; j++) {
-                if(dp[j] && wordDictSet.contains(s.substring(j, i))){
+                if (dp[j] && wordDictSet.contains(s.substring(j, i))) {
                     dp[i] = true;
                     break;
                 }
@@ -42,12 +42,12 @@ public class WordBreak {
         while (!indexQue.isEmpty()) {
             int currIndex = indexQue.poll();
 
-            for (int i = currIndex+1; i <= s.length(); i++) {
+            for (int i = currIndex + 1; i <= s.length(); i++) {
                 if (visited.contains(i)) {
                     continue;
                 }
 
-                if(wordDict.contains(s.substring(currIndex, i))) {
+                if (wordDict.contains(s.substring(currIndex, i))) {
                     if (i == s.length()) {
                         return true;
                     }

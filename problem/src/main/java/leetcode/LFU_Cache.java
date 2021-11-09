@@ -20,13 +20,13 @@ public class LFU_Cache {
 
     int capacity;
     Map<Integer, Entry> keyToEntryMap;
-    Map<Integer, LinkedHashSet<Entry>> freqToEntryMap;
+    Map<Integer, LinkedHashSet<Entry>> freqToEntriesMap;
     int leastFrequency;
 
     public LFU_Cache(int capacity) {
         this.capacity = capacity;
         keyToEntryMap = new HashMap<>();
-        freqToEntryMap = new HashMap<>();
+        freqToEntriesMap = new HashMap<>();
 
         leastFrequency = 0;
     }
@@ -38,19 +38,19 @@ public class LFU_Cache {
 
         Entry entry = keyToEntryMap.get(key);
 
-        freqToEntryMap.get(entry.frequency).remove(entry);
+        freqToEntriesMap.get(entry.frequency).remove(entry);
 
-        if (entry.frequency == leastFrequency && freqToEntryMap.get(entry.frequency).isEmpty()) {
-            freqToEntryMap.remove(entry.frequency);
+        if (entry.frequency == leastFrequency && freqToEntriesMap.get(entry.frequency).isEmpty()) {
+            freqToEntriesMap.remove(entry.frequency);
             leastFrequency++;
         }
 
         entry.frequency++;
 
-        if (!freqToEntryMap.containsKey(entry.frequency)) {
-            freqToEntryMap.put(entry.frequency, new LinkedHashSet<>());
+        if (!freqToEntriesMap.containsKey(entry.frequency)) {
+            freqToEntriesMap.put(entry.frequency, new LinkedHashSet<>());
         }
-        freqToEntryMap.get(entry.frequency).add(entry);
+        freqToEntriesMap.get(entry.frequency).add(entry);
 
         return entry.val;
     }
@@ -70,13 +70,13 @@ public class LFU_Cache {
 
         if (keyToEntryMap.size() == capacity) {
 
-            Entry entryWithMinFreq = freqToEntryMap.get(leastFrequency).iterator().next();
-            freqToEntryMap.get(leastFrequency).remove(entryWithMinFreq);
+            Entry entryWithMinFreq = freqToEntriesMap.get(leastFrequency).iterator().next();
+            freqToEntriesMap.get(leastFrequency).remove(entryWithMinFreq);
 
             keyToEntryMap.remove(entryWithMinFreq.key);
 
-            if (freqToEntryMap.get(leastFrequency).size() == 0) {
-                freqToEntryMap.remove(leastFrequency);
+            if (freqToEntriesMap.get(leastFrequency).isEmpty()) {
+                freqToEntriesMap.remove(leastFrequency);
             }
         }
 
@@ -84,9 +84,9 @@ public class LFU_Cache {
         leastFrequency = 1;
 
         keyToEntryMap.put(key, newEntry);
-        if (!freqToEntryMap.containsKey(leastFrequency)) {
-            freqToEntryMap.put(leastFrequency, new LinkedHashSet<>());
+        if (!freqToEntriesMap.containsKey(leastFrequency)) {
+            freqToEntriesMap.put(leastFrequency, new LinkedHashSet<>());
         }
-        freqToEntryMap.get(leastFrequency).add(newEntry);
+        freqToEntriesMap.get(leastFrequency).add(newEntry);
     }
 }

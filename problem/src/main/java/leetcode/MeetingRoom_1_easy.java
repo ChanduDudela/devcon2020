@@ -6,6 +6,7 @@ import java.util.Arrays;
 public class MeetingRoom_1_easy {
 
     public boolean canAttendMeetings(int[][] intervals) {
+        // Sort by the meeting start times
         Arrays.sort(intervals, (a, b) -> a[0] - b[0]);
 
         for (int i = 0; i < intervals.length - 1; i++) {

@@ -8,7 +8,7 @@ public class SnakesAndLadders {
     public int snakesAndLadders(int[][] board) {
         int boardLength = board.length;
 
-        if(boardLength == 0){
+        if (boardLength == 0) {
             return 0;
         }
 
@@ -19,13 +19,13 @@ public class SnakesAndLadders {
         boolean leftToRight = true;
         int idx = 1;
 
-        for(int i = boardLength-1; i >= 0; i--) {
-            if(leftToRight) {
-                for(int j =0; j < boardLength; j++){
+        for (int i = boardLength - 1; i >= 0; i--) {
+            if (leftToRight) {
+                for (int j = 0; j < boardLength; j++) {
                     boardArr[idx++] = board[i][j];
                 }
-            } else{
-                for(int j = boardLength -1; j >= 0; j--){
+            } else {
+                for (int j = boardLength - 1; j >= 0; j--) {
                     boardArr[idx++] = board[i][j];
                 }
             }
@@ -41,16 +41,16 @@ public class SnakesAndLadders {
         int turns = 1;
         visited[1] = true;
 
-        while(!pq.isEmpty()){
+        while (!pq.isEmpty()) {
             int size = pq.size();
 
-            for(int i =0; i < size; i ++){
+            for (int i = 0; i < size; i++) {
                 int square = pq.poll();
 
-                for(int j =1; j <= 6; j++){
+                for (int j = 1; j <= 6; j++) {
                     int newSquare = square + j;
 
-                    if(boardArr[newSquare] != -1){
+                    if (boardArr[newSquare] != -1) {
                         newSquare = boardArr[newSquare];
                     }
 
@@ -58,7 +58,7 @@ public class SnakesAndLadders {
                         continue;
                     }
 
-                    if(newSquare == boardLength * boardLength){
+                    if (newSquare == boardLength * boardLength) {
                         return turns;
                     }
 

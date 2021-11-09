@@ -67,9 +67,9 @@ class LRU_Cache {
                 map.remove(end.key);
                 removeEntry(end);
             }
-            moveToTop(newEntry);
 
             map.put(key, newEntry);
+            moveToTop(newEntry);
         }
     }
 

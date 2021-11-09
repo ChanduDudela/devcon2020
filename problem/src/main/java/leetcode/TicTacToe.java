@@ -4,7 +4,6 @@ package leetcode;
 public class TicTacToe {
 
     /** Initialize your data structure here. */
-
     int[] rows;
     int[] cols;
 

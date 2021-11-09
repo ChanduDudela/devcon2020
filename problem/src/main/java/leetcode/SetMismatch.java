@@ -3,21 +3,29 @@ package leetcode;
 public class SetMismatch {
     //Explanation - https://www.youtube.com/watch?v=u6Dt9av66yM&t=65s
     public int[] findErrorNums(int[] nums) {
+        if(nums == null || nums.length == 0){
+            return new int[0];
+        }
+
         int[] res = new int[2];
+        for(int i = 0; i < nums.length; i++){
+            // the index we should to put abs(nums[i])
+            int index = Math.abs(nums[i]) - 1;
 
-        for (int i = 0; i < nums.length; i++) {
-            int index = Math.abs(nums[i])-1;
-
-            if (nums[index] < 0) {
-                res[0] = index+1;
+            // if that position is already taken, i.e. negative
+            // then it is duplicate
+            if(nums[index] < 0){
+                res[0] = index + 1; // duplicate
             } else {
-                nums[index] *= -1;
+                // put it by marking negative
+                nums[index] = -nums[index];
             }
         }
 
-        for (int i = 0; i < nums.length; i++) {
-            if (nums[i] > 0) {
-                res[1] = i+1;
+        for(int i = 0; i < nums.length; i++){
+            // value at index i is not negative (then it appeared twice), then i + 1 missing
+            if(nums[i] > 0){
+                res[1] = i + 1;
             }
         }
 

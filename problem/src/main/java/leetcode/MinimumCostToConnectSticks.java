@@ -3,6 +3,11 @@ package leetcode;
 import java.util.PriorityQueue;
 import java.util.Queue;
 
+//https://leetcode.com/problems/minimum-cost-to-connect-sticks/
+
+/**
+ * 
+ */
 public class MinimumCostToConnectSticks {
 
     public static void main(String[] args) {

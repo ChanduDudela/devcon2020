@@ -1,9 +1,8 @@
 package leetcode;
 
 public class ReverseWordsInAString {
-
-    //preferred approach - In place
-    public void reverseWordsInplace(char[] s) {
+    //In place
+    public void reverseWordsInPlace(char[] s) {
         reverse(s, 0, s.length - 1); //reverse all chars in the array
 
         int r = 0;
@@ -28,32 +27,6 @@ public class ReverseWordsInAString {
 
             l++;
             r--;
-        }
-    }
-
-    //my way.
-    public void reverseWords(char[] s) {
-
-        char[] str = new char[s.length];
-        int endIndex = s.length - 1;
-        int targetStartIndex = 0;
-
-        for (int i = s.length - 1; i >= 0; i--) {
-            if (s[i] == ' ') {
-                for (int j = i + 1; j <= endIndex; j++) {
-                    str[targetStartIndex++] = s[j];
-                }
-                endIndex = i - 1;
-                str[targetStartIndex++] = ' ';
-            } else if (i == 0) {
-                for (int j = 0; j <= endIndex; j++) {
-                    str[targetStartIndex++] = s[j];
-                }
-            }
-        }
-
-        for (int i = 0; i < s.length; i++) {
-            s[i] = str[i];
         }
     }
 }

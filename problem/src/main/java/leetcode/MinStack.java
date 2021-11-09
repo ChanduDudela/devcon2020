@@ -9,6 +9,8 @@ class MinStack {
     private final Stack<Integer> mainStack;
 
     //stack to maintain the minimum number at 0th index and its count at 1st index
+    //x[0] - value
+    //x[1] - it's count
     private final Stack<int[]> minStack;
 
     public MinStack() {

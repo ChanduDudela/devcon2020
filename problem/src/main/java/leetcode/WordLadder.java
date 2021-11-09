@@ -6,6 +6,10 @@ import java.util.List;
 import java.util.Queue;
 import java.util.Set;
 
+//https://leetcode.com/problems/word-ladder/
+// Given two words, beginWord and endWord, and a dictionary wordList,
+// return the number of words in the shortest transformation sequence from beginWord to endWord,
+// or 0 if no such sequence exists.
 class WordLadder {
     public int ladderLength(String beginWord, String endWord, List<String> wordList) {
         if (beginWord == null || endWord == null || wordList.size() == 0) {

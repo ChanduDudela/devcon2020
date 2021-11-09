@@ -14,30 +14,30 @@ public class WordBreak_2_Hard {
 
     public List<String> wordBreak(String s, List<String> wordDict) {
 
-        if(s== null || s.length() == 0) {
+        if (s == null || s.length() == 0) {
             return new ArrayList<>();
         }
 
-        if(cache.containsKey(s)) {
+        if (cache.containsKey(s)) {
             //cache already has result for this String, just return it
             return cache.get(s);
         }
 
         List<String> res = new ArrayList<>();
 
-        if(wordDict.contains(s)){
+        if (wordDict.contains(s)) {
             res.add(s);
         }
 
-        for(int i =1; i < s.length(); i++){
+        for (int i = 1; i < s.length(); i++) {
             String left = s.substring(0, i);
             String right = s.substring(i);
 
-            if(wordDict.contains(left)) { // && containsSuffix(wordDict, right)) { // for more optimization
+            if (wordDict.contains(left)) { // && containsSuffix(wordDict, right)) { // for more optimization
                 List<String> rightStrResponse = wordBreak(right, wordDict);
 
                 // for each right subtree result, push it into the array
-                for(String str: rightStrResponse){
+                for (String str : rightStrResponse) {
                     res.add(left + " " + str);
                 }
             }
