@@ -14,11 +14,11 @@ public class FavouriteGenre {
         select having=max: user -> [genre]
 
         Input:
-        userSongs = {
+        userMap = {
            "David": ["song1", "song2", "song3", "song4", "song8"],
            "Emma":  ["song5", "song6", "song7"]
         },
-        songGenres = {
+        genreMap = {
            "Rock":    ["song1", "song3"],
            "Dubstep": ["song7"],
            "Techno":  ["song2", "song4"],
@@ -26,7 +26,8 @@ public class FavouriteGenre {
            "Jazz":    ["song8", "song9"]
         }
 
-        Output: {
+        Output:
+        {
            "David": ["Rock", "Techno"],
            "Emma":  ["Pop"]
         }
