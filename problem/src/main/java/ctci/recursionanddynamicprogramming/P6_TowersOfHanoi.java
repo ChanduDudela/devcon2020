@@ -28,6 +28,7 @@ public class P6_TowersOfHanoi {
                 return;
             }
 
+            // move using buffer as destination, destination as buffer
             moveDisks(quantity - 1, buffer, destination);
             moveTopTo(destination);
             buffer.moveDisks(quantity-1, destination, this);

@@ -4,7 +4,7 @@ import java.util.Random;
 
 public class P11_RandomNode {
 
-    class TreeNode {
+    static class TreeNode {
         public TreeNode(int val) {
             this.value = val;
             this.size = 1;
@@ -22,10 +22,10 @@ public class P11_RandomNode {
             int leftSubtreeSize = left == null ? 0: left.size;
             if (randomIndex <  leftSubtreeSize) {
                 return left.getRandomNode();
-            } else if (randomIndex == leftSubtreeSize) {
-                return this;
-            } else {
+            } else if (randomIndex > leftSubtreeSize) {
                 return right.getRandomNode();
+            } else {
+                return this;
             }
         }
 

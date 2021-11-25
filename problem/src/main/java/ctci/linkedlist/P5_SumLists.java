@@ -1,39 +1,51 @@
 package ctci.linkedlist;
 
-import ctci.linkedlist.P2_KthFromLast.Node;
-
 public class P5_SumLists {
 
-    public static Node addLists(Node l1, Node l2) {
-        return addLists(l1, l2, 0);
+    public ListNode addTwoNumbers_(ListNode l1, ListNode l2) {
+        ListNode dummy = new ListNode(0);
+        ListNode head = dummy;
+        int carry = 0;
+
+        while (l1 != null || l2 != null) {
+            int x = l1 != null ? l1.val : 0;
+            int y = l2 != null ? l2.val : 0;
+
+            int sum = x + y + carry;
+
+            carry = sum / 10;
+            dummy.next = new ListNode(sum % 10);
+            dummy = dummy.next;
+
+            if (l1 != null) {
+                l1 = l1.next;
+            }
+
+            if (l2 != null) {
+                l2 = l2.next;
+            }
+        }
+        if (carry > 0) {
+            dummy.next = new ListNode(carry);
+        }
+
+        return head.next;
     }
 
-    static Node addLists(Node l1, Node l2, int carry) {
-        if (l1 == null && l2 == null && carry == 0) {
-            return null;
+    public static class ListNode {
+        int val;
+        ListNode next;
+
+        ListNode() {
         }
 
-        Node result = new Node();
-        int total = carry;
-
-        if (l1 != null) {
-            total = total + l1.val;
+        ListNode(int val) {
+            this.val = val;
         }
 
-        if (l2 != null) {
-            total = total + l2.val;
+        ListNode(int val, ListNode next) {
+            this.val = val;
+            this.next = next;
         }
-
-        result.val = total % 10; // remainder
-
-        // recurse
-        if (l1 != null || l2 != null) {
-            Node nextNodeResult =
-                addLists(l1.next == null ? null : l1.next, l2.next == null ? null : l2.next,
-                    total >= 10 ? 1 : 0);
-            result.next = nextNodeResult;
-        }
-
-        return result;
     }
 }

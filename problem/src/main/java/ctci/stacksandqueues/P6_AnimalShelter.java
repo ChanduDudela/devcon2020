@@ -51,7 +51,7 @@ abstract class Animal {
     String name;
 
     public Animal(String name) {
-        name = name;
+        this.name = name;
     }
 
     public void setOrder(int n) {

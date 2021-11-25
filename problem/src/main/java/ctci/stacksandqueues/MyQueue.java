@@ -31,7 +31,7 @@ public class MyQueue<T> {
     private T remove() {
         T val = null;
         if (first != null) {
-            val = (T) first.value;
+            val = first.value;
             first = first.next;
         } else {
             last = null;

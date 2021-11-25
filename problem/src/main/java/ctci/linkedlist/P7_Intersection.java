@@ -19,8 +19,8 @@ public class P7_Intersection {
             return null;
         }
 
-        Result r1 = getTailandSize(l1);
-        Result r2 = getTailandSize(l2);
+        Result r1 = getTailAndSize(l1);
+        Result r2 = getTailAndSize(l2);
 
         if (r1.tail != r2.tail) {
             return null;
@@ -55,7 +55,7 @@ public class P7_Intersection {
         return l;
     }
 
-    static Result getTailandSize(Node l) {
+    static Result getTailAndSize(Node l) {
         int count = 0;
         while (l != null && l.next != null) {
             count++;

@@ -1,15 +1,17 @@
 package ctci.recursionanddynamicprogramming;
 
 public class P11_Coins {
+    //  A 2x2 matrix
+
     //     25c, 10c, 5c, 1c
     //  1 [   ,    ,   ,   ]
     //  2 [                ]
     //  3 [                ]
     //  4 [                ]
-    int makeChange(int total, int[] denoms) {
+    int makeChange(int totalCoins, int[] denoms) {
         //cache
-        int[][] cache = new int[total + 1][denoms.length];
-        return makeChange(total, denoms, 0, cache);
+        int[][] cache = new int[totalCoins + 1][denoms.length];
+        return makeChange(totalCoins, denoms, 0, cache);
     }
 
     int makeChange(int total, int[] denoms, int index, int[][] cache) {

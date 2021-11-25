@@ -51,7 +51,6 @@ public class Problem3_URLify {
         arr[11] = 'T';
         arr[12] = 'H';
 
-
         System.out.println(Problem3_URLify.getUrl(arr, 13));
     }
 }

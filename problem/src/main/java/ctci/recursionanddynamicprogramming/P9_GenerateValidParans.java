@@ -5,30 +5,30 @@ import java.util.Set;
 
 public class P9_GenerateValidParans {
     Set<String> getValidParenthesis(int n) {
-        HashSet<String> cache = new HashSet<>();
-        return getValidParenthesis(n, cache);
+        HashSet<String> resultSet = new HashSet<>();
+        return getValidParenthesis(n, resultSet);
     }
 
-    Set<String> getValidParenthesis(int n, HashSet<String> cache) {
+    Set<String> getValidParenthesis(int n, HashSet<String> resultSet) {
         if (n == 0) {
-            cache.add("");
-            return cache;
+            resultSet.add("");
+            return resultSet;
         }
 
-        Set<String> subset = getValidParenthesis(n-1, cache);
+        Set<String> subset = getValidParenthesis(n-1, resultSet);
         for (String s: subset) {
             //add a new pair () at the beginning
-            cache.add("()" + s);
+            resultSet.add("()" + s);
 
             for (int i = 0; i < s.length(); i++) {
                 // add a new pair () after each open parenthesis
                 if(s.charAt(i) == '(') {
                     String newStr = insertAt(s, i);
-                    cache.add(newStr);
+                    resultSet.add(newStr);
                 }
             }
         }
-        return cache;
+        return resultSet;
     }
 
     String insertAt(String s, int i) {

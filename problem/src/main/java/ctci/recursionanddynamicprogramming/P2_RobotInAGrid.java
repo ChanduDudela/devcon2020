@@ -7,6 +7,7 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Queue;
 
+// BFS approach
 public class P2_RobotInAGrid {
     List<int[]> getPathToTarget(int[][] grid) {
         int rows = grid.length;

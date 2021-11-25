@@ -4,6 +4,7 @@ import java.util.Stack;
 
 public class P5_SortStack {
 
+    // See CTCI explanation
     public void sort(Stack<Integer> stack) {
         Stack<Integer> tempStack = new Stack<>();
 

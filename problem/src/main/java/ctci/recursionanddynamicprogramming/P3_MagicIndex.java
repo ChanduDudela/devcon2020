@@ -3,27 +3,12 @@ package ctci.recursionanddynamicprogramming;
 public class P3_MagicIndex {
 
     int getMagicIndex(int[] arr) {
-        return getMagicIndex(arr, 0);
-        //getMagicIndexDistinctNumbers(arr, 0, arr.length-1);
-    }
-
-    // my own solution
-    int getMagicIndex(int[] arr, int idx) {
-        if (arr[idx] == idx) {
-            return idx;
-        } else {
-            idx = arr[idx];
-
-            if (idx+1 <= arr.length - 1) {
-                getMagicIndex(arr, idx+1);
-            }
-        }
-        return -1;
+        return getMagicIndexDistinctNumbers(arr, 0, arr.length-1);
     }
 
     // when numbers are distinct. Runtime O(log N), N - length of the array
     int getMagicIndexDistinctNumbers(int[] arr, int start, int end) {
-        if (end < start) {
+        if (start > end) {
             return -1;
         }
 
@@ -39,7 +24,7 @@ public class P3_MagicIndex {
 
     // when numbers are not distinct. Runtime O(log N), N - length of the array
     int getMagicIndexNonDistinctNumbers(int[] arr, int startIndex, int endIndex) {
-        if (endIndex < startIndex) {
+        if (startIndex > endIndex) {
             return -1;
         }
 

@@ -8,8 +8,8 @@ public class P1_ThreeStacksInSingleArray {
 
     public P1_ThreeStacksInSingleArray(int eachStackCapacity) {
         this.eachStackCapacity = eachStackCapacity;
-        values = new int[eachStackCapacity * numOfStacks];
-        stacksSize = new int[numOfStacks];
+        values = new int[eachStackCapacity * numOfStacks]; // to maintain the stack values
+        stacksSize = new int[numOfStacks]; // to maintain capacity of each stack
     }
 
     public void push(int stackNumber, int value) {

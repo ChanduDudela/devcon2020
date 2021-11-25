@@ -7,14 +7,14 @@ public class Problem1_StringUniqueCharacters {
             return false;
         }
 
-        boolean[] char_set = new boolean[128];
+        boolean[] charSet = new boolean[128];
         for (int i=0; i < str.length(); i++) {
             int val = str.charAt(i);
 
-            if(char_set[val]) {
+            if(charSet[val]) {
                 return false;
             }
-            char_set[val] = true;
+            charSet[val] = true;
         }
         return true;
     }
