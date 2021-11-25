@@ -2,7 +2,7 @@ package ctci.mediumproblems;
 
 import java.util.Stack;
 
-public class Calculator {
+public class P26_Calculator {
     enum Operator {
         ADD, SUBTRACT, MULTIPLY, DIVIDE, NO_OP
     }

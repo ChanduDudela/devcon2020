@@ -3,7 +3,7 @@ package ctci.mediumproblems;
 import java.util.ArrayList;
 import java.util.HashMap;
 
-public class PairsWithSum {
+public class P24_PairsWithSum {
     static class Pair {
         int x;
         int y;
@@ -14,6 +14,8 @@ public class PairsWithSum {
         }
     }
 
+    // for each element, calculate diff with target and check if this diff is in the map.
+    // If not there, add this element into the map for future use
     ArrayList<Pair> getPairsWithSum(int[] arr, int target) {
         HashMap<Integer, Integer> unpairedCount = new HashMap<>();
         ArrayList<Pair> result = new ArrayList<>();

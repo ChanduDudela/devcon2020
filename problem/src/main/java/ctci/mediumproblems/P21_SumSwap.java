@@ -3,20 +3,23 @@ package ctci.mediumproblems;
 import java.util.Arrays;
 import java.util.HashSet;
 
-public class SumSwap {
+public class P21_SumSwap {
 
     int[] getValuesForSwap(int[] arr1, int[] arr2) {
         if (arr1.length == 0 || arr2.length == 0) {
             return null;
         }
 
+        // target => (a-b)
         Integer target = getTargetValue(arr1, arr2);
         if (target == null) {
             return null;
         }
 
+        // convert to hash for constant time lookup
         HashSet<Integer> arr2Hash = getArray2Hash(arr2);
 
+        // b => (a-target)
         for(int element : arr1) {
             int diff = element - target;
             if (arr2Hash.contains(diff)) {

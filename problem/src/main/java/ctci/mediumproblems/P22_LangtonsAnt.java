@@ -3,7 +3,7 @@ package ctci.mediumproblems;
 import java.util.HashSet;
 import java.util.Objects;
 
-public class LangtonsAnt {
+public class P22_LangtonsAnt {
     public enum Orientation {
         up, down, right, left;
 

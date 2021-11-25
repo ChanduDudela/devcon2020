@@ -1,6 +1,6 @@
 package ctci.mediumproblems;
 
-public class IntegerToEnglish {
+public class P8_IntegerToEnglish {
     String[] LESS_THAN_TWENTY = {"", "One", "Two", "Three", "Four", "Five", "Six", "Seven", "Eight",
         "Nine", "Ten", "Eleven", "Twelve", "Thirteen", "Fourteen", "Fifteen",
         "Sixteen", "Seventeen", "Eighteen", "Nineteen"};

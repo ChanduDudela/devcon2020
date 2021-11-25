@@ -1,11 +1,12 @@
 package ctci.mediumproblems;
 
-public class MasterMind {
+public class P15_MasterMind {
     static class Result {
         int hits;
         int pseudoHits;
     }
 
+    // Used to map a color code to an index in the frequency array
     int getColorCode(char c) {
         switch (c) {
             case 'Y': return 0;
@@ -24,8 +25,10 @@ public class MasterMind {
         }
 
         Result rs = new Result();
+        // array to track the mis-hits
         int[] frequency = new int[MAX_COLORS];
 
+        //calculate hits
         for (int i = 0; i < guess.length(); i++) {
             if (guess.charAt(i) == solution.charAt(i)) {
                 rs.hits ++;
@@ -35,6 +38,7 @@ public class MasterMind {
             }
         }
 
+        //calculate pseudo-hits
         for (int i = 0; i < guess.length(); i++) {
             int code = getColorCode(guess.charAt(i));
             if (guess.charAt(i) != solution.charAt(i)

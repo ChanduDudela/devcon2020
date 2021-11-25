@@ -3,15 +3,15 @@ package ctci.mediumproblems;
 import java.util.HashMap;
 import java.util.LinkedList;
 
-public class LRUCache {
-    LinkedList<String> queueByKey;
+public class P25_LRUCache {
+    LinkedList<String> linkedListOfKeys;
     HashMap<String, String> map;
 
-    final Integer MAX_SIZE;
+    private final Integer MAX_SIZE;
 
-    public LRUCache(int size) {
+    public P25_LRUCache(int size) {
         MAX_SIZE = size;
-        queueByKey = new LinkedList<>();
+        linkedListOfKeys = new LinkedList<>();
         map = new HashMap<>(size);
     }
 
@@ -27,14 +27,14 @@ public class LRUCache {
     void insert (String key, String value) {
         map.put(key, value);
         moveToHead(key);
-        if (queueByKey.size() == MAX_SIZE) {
-            String removedKey = queueByKey.pop();
+        if (linkedListOfKeys.size() >= MAX_SIZE) {
+            String removedKey = linkedListOfKeys.removeLast();
             map.remove(removedKey);
         }
     }
 
     void moveToHead(String key) {
-        queueByKey.remove(key);
-        queueByKey.offerFirst(key);
+        linkedListOfKeys.remove(key);
+        linkedListOfKeys.offerFirst(key);
     }
 }

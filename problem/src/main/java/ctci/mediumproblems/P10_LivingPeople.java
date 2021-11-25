@@ -2,7 +2,7 @@ package ctci.mediumproblems;
 
 import java.util.Arrays;
 
-public class LivingPeople {
+public class P10_LivingPeople {
     static class Person {
         int birthYear;
         int deathYear;
@@ -42,12 +42,10 @@ public class LivingPeople {
     }
 
     int[] getSortedYears(Person[] persons, boolean isBirthYear) {
-        int[] years;
-        if (isBirthYear) {
-            years = Arrays.stream(persons).mapToInt(p -> p.birthYear).toArray();
-        } else {
-            years = Arrays.stream(persons).mapToInt(p -> p.deathYear).toArray();
-        }
+        int[] years = isBirthYear ?
+            Arrays.stream(persons).mapToInt(p -> p.birthYear).toArray()
+            : Arrays.stream(persons).mapToInt(p -> p.deathYear).toArray();
+        Arrays.sort(years);
         return years;
     }
 }

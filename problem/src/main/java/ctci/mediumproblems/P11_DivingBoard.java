@@ -2,10 +2,10 @@ package ctci.mediumproblems;
 
 import java.util.HashSet;
 
-public class DivingBoard {
+public class P11_DivingBoard {
     HashSet<Integer> getLengthsOfBoard(int k, int l1, int l2) {
         HashSet<Integer> lengths = new HashSet<>();
-        HashSet<String> cache = new HashSet<>(); // storing combination of - total + " " + k
+        HashSet<String> cache = new HashSet<>(); // storing combination of => total + " " + k
 
         getLengths(k, 0, l1, l2, lengths, cache);
         return lengths;
@@ -30,7 +30,6 @@ public class DivingBoard {
     }
 
     /////// Approach 2 //////
-
     HashSet<Integer> getDiffLengthsOfBoard(int k, int l1, int l2) {
         HashSet<Integer> lengths = new HashSet<>();
         for (int nShorter = 0; nShorter < l1; nShorter++) {

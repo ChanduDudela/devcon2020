@@ -2,7 +2,7 @@ package ctci.mediumproblems;
 
 import java.util.Arrays;
 
-public class SmallestDifference {
+public class P6_SmallestDifference {
     int findSmallestDifference(int[] a, int[] b) {
         if (a.length == 0 || b.length == 0) {
             return -1;

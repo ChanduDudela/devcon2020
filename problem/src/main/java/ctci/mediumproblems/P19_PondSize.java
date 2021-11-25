@@ -3,7 +3,7 @@ package ctci.mediumproblems;
 import java.util.ArrayList;
 import java.util.List;
 
-public class PondSize {
+public class P19_PondSize {
     List<Integer> getPondSizes (int[][] plot) {
         if (plot == null || plot.length == 0) {
             return null;
@@ -35,7 +35,7 @@ public class PondSize {
         int size = 1;
         for (int i = -1; i < 1; i++) {
             for (int j = -1; j < 1; j++) {
-                size += compute(i + row, j + col, plot, visited);
+                size += compute(row + i, col + j, plot, visited);
             }
         }
 

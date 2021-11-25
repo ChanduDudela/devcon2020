@@ -1,6 +1,6 @@
 package ctci.mediumproblems;
 
-public class SubSort {
+public class P16_SubSort {
     static class Range {
         int leftIndex;
         int rightIndex;
@@ -19,25 +19,25 @@ public class SubSort {
     }
 
     int getUnsortedIndexLeftToRight(int[] arr) {
-        int max = Integer.MIN_VALUE;
+        int leftMax = Integer.MIN_VALUE;
         int leftIndex = 0;
         for (int i = 0; i < arr.length; i++) {
-            if (max > arr[i]) {
+            if (leftMax > arr[i]) {
                 leftIndex = i;
             }
-            max = Math.max(max, arr[i]);
+            leftMax = Math.max(leftMax, arr[i]);
         }
         return leftIndex;
     }
 
     int getUnsortedIndexRightToLeft(int[] arr) {
-        int min = Integer.MAX_VALUE;
+        int rightMin = Integer.MAX_VALUE;
         int rightIndex = arr.length-1;
         for (int i = arr.length-1; i >= 0; i--) {
-            if (min < arr[i]) {
+            if (rightMin < arr[i]) {
                 rightIndex = i;
             }
-            min = Math.min(min, arr[i]);
+            rightMin = Math.min(rightMin, arr[i]);
         }
         return rightIndex;
     }

@@ -1,6 +1,6 @@
 package ctci.mediumproblems;
 
-public class TicTacToe {
+public class P4_TicTacToe {
 
     int[][] board;
     int[] rowSum; // maintain the sum for each row
@@ -8,7 +8,7 @@ public class TicTacToe {
     int topLeftDiagonal = 0;
     int topRightDiagonal = 0;
 
-    public TicTacToe(int[][] board) {
+    public P4_TicTacToe(int[][] board) {
         this.board = board;
 
         rowSum = new int[board.length];

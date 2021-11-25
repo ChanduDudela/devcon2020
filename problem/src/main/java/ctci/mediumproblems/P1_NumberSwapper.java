@@ -1,6 +1,6 @@
 package ctci.mediumproblems;
 
-public class NumberSwapper {
+public class P1_NumberSwapper {
 
     void swap(int a, int b) {
         // 0-----a--------b

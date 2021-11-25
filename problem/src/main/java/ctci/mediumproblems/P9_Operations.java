@@ -1,6 +1,6 @@
 package ctci.mediumproblems;
 
-public class Operations {
+public class P9_Operations {
 
     int negate(int a) {
         int sym = a > 0 ? -1 : 1;
@@ -16,6 +16,7 @@ public class Operations {
         return a + negate(b);
     }
 
+    // considering argument a > b, so we can iterate b times
     int multiply(int a, int b) {
         if (a < b) {
             multiply(b, a);
@@ -43,6 +44,7 @@ public class Operations {
 
     // a/b = x
     // a = b * x
+    // a = (b + b + .....x times)
     int divide(int a, int b) {
         if (b == 0) {
             throw new ArithmeticException();

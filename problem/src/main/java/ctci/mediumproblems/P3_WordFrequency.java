@@ -3,17 +3,17 @@ package ctci.mediumproblems;
 import java.util.HashMap;
 import java.util.Map;
 
-public class WordFrequency {
+public class P3_WordFrequency {
 
     private final Map<String, Integer> wordCount;
     String[] book;
 
-    public WordFrequency(String[] book) {
+    public P3_WordFrequency(String[] book) {
         this.book = book;
         this.wordCount = new HashMap<>();
         for (String word: book) {
             int count = wordCount.getOrDefault(word, 0);
-            wordCount.put(word.trim().toLowerCase(), count++);
+            wordCount.put(word.trim().toLowerCase(), count+1);
         }
     }
 
