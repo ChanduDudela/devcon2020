@@ -3,7 +3,7 @@ package ctci.hardproblems;
 import java.util.ArrayList;
 import java.util.Collections;
 
-public class CircusTower {
+public class P8_CircusTower {
     static class HtWt implements Comparable<HtWt>{
         int height;
         int weight;

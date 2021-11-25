@@ -1,6 +1,6 @@
 package ctci.hardproblems;
 
-public class ConvertBSTToDLL {
+public class P12_ConvertBSTToDLL {
     static class BiNode {
         BiNode left;
         BiNode right;
@@ -58,7 +58,7 @@ public class ConvertBSTToDLL {
         root.right.left = new BiNode(12);
         root.right.right = new BiNode(20);
 
-        NodePair left = new ConvertBSTToDLL().convertToDLL(root);
+        NodePair left = new P12_ConvertBSTToDLL().convertToDLL(root);
         BiNode node = left.head;
 
         while (node != null) {

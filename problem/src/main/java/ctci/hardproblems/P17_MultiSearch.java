@@ -3,7 +3,7 @@ package ctci.hardproblems;
 import java.util.ArrayList;
 import java.util.HashMap;
 
-public class MultiSearch {
+public class P17_MultiSearch {
     static class Trie {
         private final TrieNode root;
 

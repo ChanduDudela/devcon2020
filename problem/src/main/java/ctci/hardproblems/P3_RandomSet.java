@@ -2,7 +2,7 @@ package ctci.hardproblems;
 
 import java.util.Random;
 
-public class RandomSet {
+public class P3_RandomSet {
     int[] pickRandomSubset(int[] original, int m) {
         if (m > original.length) return null;
 

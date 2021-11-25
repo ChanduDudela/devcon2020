@@ -5,7 +5,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
 
-public class BabyNames {
+public class P7_BabyNames {
     static class Graph {
         Map<String, GraphNode> graphNodes;
 

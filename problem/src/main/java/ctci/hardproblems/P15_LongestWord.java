@@ -3,7 +3,7 @@ package ctci.hardproblems;
 import java.util.Arrays;
 import java.util.HashMap;
 
-public class LongestWord {
+public class P15_LongestWord {
     String getLongestWord (String[] words) {
         if (words.length == 0) return "";
 

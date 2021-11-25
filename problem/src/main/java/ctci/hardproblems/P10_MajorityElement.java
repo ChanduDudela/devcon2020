@@ -1,6 +1,6 @@
 package ctci.hardproblems;
 
-public class MajorityElement {
+public class P10_MajorityElement {
 
     int findMajorityElement (int[] array) {
         int majority = findMajorityElementFromArray(array);
@@ -12,21 +12,21 @@ public class MajorityElement {
     }
 
     int findMajorityElementFromArray (int[] array) {
-        int majority = 0;
+        int majorityElement = 0;
         int count = 0;
 
         for (int elem : array) {
             if (count == 0) {
-                majority = elem;
+                majorityElement = elem;
             }
 
-            if (majority == elem) {
+            if (majorityElement == elem) {
                 count++;
             } else {
                 count--;
             }
         }
-        return majority;
+        return majorityElement;
     }
 
     boolean validateMajority(int majority, int[] arr) {

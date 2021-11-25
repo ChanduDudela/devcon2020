@@ -3,7 +3,7 @@ package ctci.hardproblems;
 import java.util.LinkedList;
 import java.util.Queue;
 
-public class KthMultiple {
+public class P9_KthMultiple {
 
     int removeMinimumValue(Queue<Integer> queue) {
         int min = queue.peek();

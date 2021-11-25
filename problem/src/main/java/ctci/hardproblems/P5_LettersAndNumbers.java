@@ -2,7 +2,7 @@ package ctci.hardproblems;
 
 import java.util.HashMap;
 
-public class LettersAndNumbers {
+public class P5_LettersAndNumbers {
     // find delta array between letter and numbers
     // find max span with same delta value
 
