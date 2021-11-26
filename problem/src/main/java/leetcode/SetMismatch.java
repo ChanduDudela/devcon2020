@@ -12,12 +12,12 @@ public class SetMismatch {
             // the index we should to put abs(nums[i])
             int index = Math.abs(nums[i]) - 1;
 
-            // if that position is already taken, i.e. negative
+            // if that position is already visited, i.e. negative
             // then it is duplicate
             if(nums[index] < 0){
                 res[0] = index + 1; // duplicate
             } else {
-                // put it by marking negative
+                // mark it visited by making it negative
                 nums[index] = -nums[index];
             }
         }

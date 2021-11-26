@@ -15,6 +15,8 @@ class LRU_Cache {
         Entry(int k, int v) {
             key = k;
             value = v;
+            right = null;
+            left = null;
         }
 
         int getKey() {
@@ -33,23 +35,22 @@ class LRU_Cache {
     Map<Integer, Entry> map;
     Entry start;
     Entry end;
-    int size;
+    private final int MAX_CAPACITY;
 
     public LRU_Cache(int capacity) {
         map = new HashMap<>(capacity);
-        size = capacity;
+        MAX_CAPACITY = capacity;
     }
 
     public int get(int key) {
-        if (map.containsKey(key)) {
-            Entry entry = map.get(key);
-            removeEntry(entry);
-            moveToTop(entry);
-
-            return entry.getValue();
+        if (!map.containsKey(key)) {
+            return -1;
         }
+        Entry entry = map.get(key);
+        removeEntry(entry);
+        moveToTop(entry);
 
-        return -1;
+        return entry.getValue();
     }
 
     public void put(int key, int value) {
@@ -63,7 +64,7 @@ class LRU_Cache {
             newEntry.left = null;
             newEntry.right = null;
 
-            if (map.size() == size) {
+            if (map.size() == MAX_CAPACITY) {
                 map.remove(end.key);
                 removeEntry(end);
             }

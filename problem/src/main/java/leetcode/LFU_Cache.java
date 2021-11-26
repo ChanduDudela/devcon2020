@@ -69,7 +69,6 @@ public class LFU_Cache {
         }
 
         if (keyToEntryMap.size() == capacity) {
-
             Entry entryWithMinFreq = freqToEntriesMap.get(leastFrequency).iterator().next();
             freqToEntriesMap.get(leastFrequency).remove(entryWithMinFreq);
 

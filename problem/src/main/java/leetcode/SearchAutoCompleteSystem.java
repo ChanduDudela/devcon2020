@@ -14,11 +14,10 @@ public class SearchAutoCompleteSystem {
         Map<Character, Trie> children;
         Map<String, Integer> strToCountMap;
 
-        public Trie(){
+        public Trie() {
             children = new HashMap<>();
             strToCountMap = new HashMap<>();
         }
-
     }
 
     Trie root;
@@ -27,9 +26,9 @@ public class SearchAutoCompleteSystem {
     private void buildTrie(String word, int count) {
         Trie currNode = root;
 
-        for(int i =0; i< word.length(); i++) {
+        for (int i = 0; i < word.length(); i++) {
             char ch = word.charAt(i);
-            if(currNode.children.get(ch) == null){
+            if (currNode.children.get(ch) == null) {
                 Trie nextNode = new Trie();
                 currNode.children.put(ch, nextNode);
             }
@@ -44,13 +43,13 @@ public class SearchAutoCompleteSystem {
         prefix = "";
 
         root = new Trie();
-        for(int i =0; i < sentences.length; i++){
+        for (int i = 0; i < sentences.length; i++) {
             buildTrie(sentences[i], times[i]);
         }
     }
 
     public List<String> input(char c) {
-        if(c == '#') {
+        if (c == '#') {
             buildTrie(prefix, 1);
             prefix = "";
             return new ArrayList<>();
@@ -60,11 +59,11 @@ public class SearchAutoCompleteSystem {
 
         Trie currNode = root;
 
-        for(int i=0; i < prefix.length(); i++){
+        for (int i = 0; i < prefix.length(); i++) {
             char ch = prefix.charAt(i);
             Trie node = currNode.children.get(ch);
 
-            if(node == null){
+            if (node == null) {
                 return new ArrayList<>();
             }
 
@@ -72,13 +71,14 @@ public class SearchAutoCompleteSystem {
         }
 
         Queue<Map.Entry<String, Integer>> pq = new PriorityQueue<>((a, b) ->
-            a.getValue().equals(b.getValue()) ? a.getKey().compareTo(b.getKey()) : b.getValue() - a.getValue());
+            a.getValue().equals(b.getValue()) ? a.getKey().compareTo(b.getKey())
+                : b.getValue() - a.getValue());
 
         pq.addAll(currNode.strToCountMap.entrySet());
         int k = 3;
         List<String> res = new ArrayList<>();
 
-        while(k > 0 && !pq.isEmpty()) {
+        while (k > 0 && !pq.isEmpty()) {
             res.add(pq.poll().getKey());
             k--;
         }

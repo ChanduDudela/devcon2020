@@ -10,7 +10,7 @@ import java.util.Queue;
 public class SerializeDeserializeBinaryTree {
 
     private StringBuilder serializeHelper(StringBuilder sb, TreeNode root) {
-        if(root == null) {
+        if (root == null) {
             sb.append("#");
             return sb;
         }

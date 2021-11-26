@@ -10,7 +10,7 @@ public class FindAllAnagrams {
     // https://leetcode.com/problems/find-all-anagrams-in-a-string/discuss/92007/Sliding-Window-algorithm-template-to-solve-all-the-Leetcode-substring-search-problem.
     public List<Integer> findAnagrams(String s, String p) {
 
-        //create a hashmap to save the Characters of the target substring.
+        // Create a character count map for the target string.
         //(K, V) = (Character, Frequency of the Characters)
         Map<Character, Integer> charMap = new HashMap<>();
         for (char ch: p.toCharArray()) {

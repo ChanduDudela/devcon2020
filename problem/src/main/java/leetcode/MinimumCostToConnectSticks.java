@@ -3,17 +3,10 @@ package leetcode;
 import java.util.PriorityQueue;
 import java.util.Queue;
 
-//https://leetcode.com/problems/minimum-cost-to-connect-sticks/
-
 /**
- * 
+ * https://leetcode.com/problems/minimum-cost-to-connect-sticks/
  */
 public class MinimumCostToConnectSticks {
-
-    public static void main(String[] args) {
-        int[] sticks = {2};
-        System.out.println(connectSticks(sticks));
-    }
 
     public static int connectSticks(int[] sticks) {
         if(sticks.length == 1){
@@ -35,5 +28,10 @@ public class MinimumCostToConnectSticks {
         }
 
         return cost;
+    }
+
+    public static void main(String[] args) {
+        int[] sticks = {2};
+        System.out.println(connectSticks(sticks));
     }
 }

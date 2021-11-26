@@ -19,8 +19,9 @@ public class MeetingRoom_2_medium {
         //Add end time of the first meeting to the min heap
         minHeapMeetingsQ.offer(intervals[0][1]);
 
-        for(int i =1; i <= intervals.length -1; i++){
-            if(intervals[i][0] >= minHeapMeetingsQ.peek()){
+        // if start time of next meeting is before the time of the meeting in queue
+        for (int i = 1; i <= intervals.length - 1; i++) {
+            if (intervals[i][0] >= minHeapMeetingsQ.peek()) {
                 minHeapMeetingsQ.poll();
             }
 

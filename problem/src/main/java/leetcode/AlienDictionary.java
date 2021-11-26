@@ -37,7 +37,7 @@ class AlienDictionary {
     private void buildGraph(String[] words, Map<Character, Set<Character>> graph, int[] inDegree) {
         for (String word : words) {
             for (char c : word.toCharArray()) {
-                graph.put(c, new HashSet<>());
+                graph.putIfAbsent(c, new HashSet<>());
             }
         }
 

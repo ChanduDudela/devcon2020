@@ -1,21 +1,22 @@
 package leetcode;
 
-/*
-The z-index is a metric that measures both the productivity and citation impact of a researcher.
-Specifically, a researcher's z-index is the largest number z such that the researcher has published
-z papers that have each been cited at least z times.
-
-For example, if Amy has published papers A, B, C, D, E, F, G, H, I,
-which have been cited 1, 4, 1, 4, 2, 1, 3, 5, 6 times, respectively,
-then her z-index is 4 (corresponding to papers B, D, H, I).
-
-Design an algorithm that determines a researcher's z-index, then discuss the time and space complexity of your algorithm.
-
-[3, 1, 2]-> z == 2
-[1, 4, 1, 4, 2, 1, 3, 5, 6] -> z == 4
-[1, 1, 1]-> z == 1
-*/
-
+/**
+ * This question was asked in Amazon telephonic round.
+ *
+ * The z-index is a metric that measures both the productivity and citation impact of a researcher.
+ * Specifically, a researcher's z-index is the largest number z such that the researcher has published
+ * z papers that have each been cited at least z times.
+ *
+ * For example, if Amy has published papers A, B, C, D, E, F, G, H, I,
+ * which have been cited 1, 4, 1, 4, 2, 1, 3, 5, 6 times, respectively,
+ * then her z-index is 4 (corresponding to papers B, D, H, I).
+ *
+ * Design an algorithm that determines a researcher's z-index, then discuss the time and space complexity of your algorithm.
+ *
+ * [3, 1, 2]-> z == 2
+ * [1, 4, 1, 4, 2, 1, 3, 5, 6] -> z == 4
+ * [1, 1, 1]-> z == 1
+**/
 // "Counting Sort" algorithm (Variation of bucket sort)
 // Explanation - https://leetcode.com/problems/h-index/discuss/70768/Java-bucket-sort-O(n)-solution-with-detail-explanation
 public class FindZIndexOfResearcher {
@@ -37,8 +38,8 @@ public class FindZIndexOfResearcher {
 
         int zIndex = 0;
 
-        // Iterate from backwards, and cumulatively add the value
-        // If the value is > index of the current element, that's the answer.
+        // Iterate from backwards, and cumulatively add the value in the bucket for that index
+        // If the value is >= index of the current element, that's the Z-Index.
         for (int i = n; i >= 0; i--) {
             zIndex += bucket[i];
 

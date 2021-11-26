@@ -40,8 +40,8 @@ public class FindAllSubsetsInArray {
         result.add(new ArrayList<>(tempResult));
         for (int i = start; i < nums.length; i++) {
             tempResult.add(nums[i]);
-            backtracking(result, tempResult, nums, i+1);
-            tempResult.remove(tempResult.size() -1 );
+            backtracking(result, tempResult, nums, i + 1);
+            tempResult.remove(tempResult.size() - 1);
         }
 
         return result;

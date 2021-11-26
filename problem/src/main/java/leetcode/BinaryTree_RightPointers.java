@@ -33,7 +33,6 @@ public class BinaryTree_RightPointers {
 					que.add(node.right);
 				}
 			}
-
 		}
 		return root;
 	}

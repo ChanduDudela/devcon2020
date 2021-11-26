@@ -12,14 +12,12 @@ public class PairWithTargetSum2PointerApproach {
         int start = 0, end = arr.length - 1;
 
         while (start < end) {
-            if (arr[start] + arr[end] > target) {
+            if (arr[start] + arr[end] == target) {
+                return new int[] {start, end};
+            } else if (arr[start] + arr[end] > target) {
                 end = end - 1;
             } else {
                 start = start + 1;
-            }
-
-            if (arr[start] + arr[end] == target) {
-                return new int[] {start, end};
             }
         }
         return res;

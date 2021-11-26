@@ -14,32 +14,32 @@ class ThreeSum {
         // to group all same numbers togethers
         Arrays.sort(nums);
 
-        for(int i=0; i < nums.length - 1 ; i++) {
-            if (i == 0 || nums[i] != nums[i-1]) {
-                int curr = i; // curr + (2 sum should be equal to -curr to that 3sum = 0)
-                int begin = i+1; // search from next element
-                int end = nums.length-1; // until the end
-                int targetSum = -nums[curr];
+        for (int i = 0; i < nums.length - 1; i++) {
+            if (i == 0 || nums[i] != nums[i - 1]) {
+                int curr = i; // curr + (2 sum should be equal to -curr so that, 3sum = 0)
+                int begin = i + 1; // search from next element
+                int end = nums.length - 1; // until the end
+                int targetSum = -nums[curr]; // target value
 
                 while (begin < end) {
                     if (nums[begin] + nums[end] == targetSum) {
                         result.add(Arrays.asList(nums[curr], nums[begin], nums[end]));
 
-                        while (begin < end && nums[begin] == nums[begin+1]) {
+                        while (begin < end && nums[begin] == nums[begin + 1]) {
                             begin++;
                         }
-                        while (begin < end && nums[end] == nums[end-1]) {
+                        while (begin < end && nums[end] == nums[end - 1]) {
                             end--;
                         }
                         begin++;
                         end--;
                     } else if (nums[begin] + nums[end] < targetSum) {
-                        while (begin < end && nums[begin] == nums[begin+1]) {
+                        while (begin < end && nums[begin] == nums[begin + 1]) {
                             begin++;
                         }
                         begin++;
                     } else {
-                        while (begin < end && nums[end] == nums[end-1]) {
+                        while (begin < end && nums[end] == nums[end - 1]) {
                             end--;
                         }
                         end--;

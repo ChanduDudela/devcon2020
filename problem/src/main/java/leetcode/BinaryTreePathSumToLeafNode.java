@@ -37,5 +37,4 @@ public class BinaryTreePathSumToLeafNode {
         System.out.println("Tree has path: " + BinaryTreePathSumToLeafNode.hasPath(root, 23));
         System.out.println("Tree has path: " + BinaryTreePathSumToLeafNode.hasPath(root, 16));
     }
-
 }

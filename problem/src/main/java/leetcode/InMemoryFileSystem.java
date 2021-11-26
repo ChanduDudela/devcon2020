@@ -18,7 +18,7 @@ public class InMemoryFileSystem {
         }
     }
 
-    private Directory root;
+    private final Directory root;
 
     public InMemoryFileSystem() {
         root = new Directory();

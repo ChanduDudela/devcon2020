@@ -3,7 +3,7 @@ package leetcode;
 public class ImplementTrieDataStructure {
 
     /** Initialize your data structure here. */
-    private TrieNode root;
+    private final TrieNode root;
 
     public ImplementTrieDataStructure() {
         root = new TrieNode();
@@ -40,7 +40,7 @@ public class ImplementTrieDataStructure {
     }
 
     /** Returns if the word is in the trie. */
-    public boolean search(String word) {
+    public boolean searchWord(String word) {
         TrieNode node = getPrefixNode(word);
 
         return node != null && node.isEnd();
@@ -55,7 +55,7 @@ public class ImplementTrieDataStructure {
 
     // A TrieNode data structure
     static class TrieNode{
-        private TrieNode[] links;
+        private final TrieNode[] links;
         private boolean isEnd = false;
 
         public TrieNode(){

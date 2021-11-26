@@ -2,12 +2,12 @@ package leetcode;
 
 import java.util.Stack;
 
-//https://leetcode.com/problems/binary-search-tree-iterator
+//https://leetcode.com/problems/binary-search-tree-iterator (IN-ORDER => root - left - right)
 // there is another approach of flattening the tree into an array.
 // See first approach in the solutions tab.
 public class BSTIterator {
 
-    public class TreeNode {
+    public static class TreeNode {
         public int val;
         public TreeNode left;
         public TreeNode right;
@@ -26,7 +26,7 @@ public class BSTIterator {
         }
     }
 
-    Stack<TreeNode> stack;
+    private final Stack<TreeNode> stack;
 
     public BSTIterator(TreeNode root) {
         stack = new Stack<>();

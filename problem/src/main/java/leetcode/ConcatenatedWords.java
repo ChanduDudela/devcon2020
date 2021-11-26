@@ -9,7 +9,7 @@ import java.util.List;
  *      If the trie node of current character represent a word,
  *      then for next character, we again search from the root node of the trie.
  *
- *https://leetcode.com/problems/concatenated-words/discuss/280915/java-41ms-trie-and-dfs-solution-which-beats-97
+ * https://leetcode.com/problems/concatenated-words/discuss/280915/java-41ms-trie-and-dfs-solution-which-beats-97
  */
 public class ConcatenatedWords {
 

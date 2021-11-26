@@ -7,7 +7,7 @@ import java.util.Queue;
 
 public class SlidingWindowMaximum {
 
-    /* Brute force using max heap for each sliding window*/
+    /** Brute force using max heap for each sliding window*/
     public int[] maxSlidingWindow_BruteForce(int[] nums, int k) {
 
         if (nums.length * k == 0) {
@@ -32,9 +32,9 @@ public class SlidingWindowMaximum {
     }
 
 
-    /* Using Deque - O(N) linear solution
-    *  Explanation - https://www.youtube.com/watch?v=DfljaUwZsOk
-    * */
+    /** Using Deque - O(N) linear solution
+    *   Explanation - https://www.youtube.com/watch?v=DfljaUwZsOk
+    */
     public int[] maxSlidingWindow(int[] nums, int k) {
         if (nums == null || nums.length == 0 || k > nums.length) {
             return new int[] {0};
@@ -46,7 +46,7 @@ public class SlidingWindowMaximum {
         int i = 0;
 
         while (i < nums.length) {
-            //check if elements are out of bounds of current window and remove them
+            //check if elements are out of range of current window and remove them
             if (!dq.isEmpty() && dq.peekFirst() == i - k) {
                 dq.pollFirst();
             }

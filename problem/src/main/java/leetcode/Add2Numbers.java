@@ -3,7 +3,7 @@ package leetcode;
 //https://leetcode.com/problems/add-two-numbers/
 public class Add2Numbers {
 
-    public ListNode addTwoNumbers_(ListNode l1, ListNode l2) {
+    public ListNode addTwoNumbers(ListNode l1, ListNode l2) {
         ListNode dummy = new ListNode(0);
         ListNode head = dummy;
         int carry = 0;
