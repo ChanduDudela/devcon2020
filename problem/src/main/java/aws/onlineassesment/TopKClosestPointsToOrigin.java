@@ -7,21 +7,21 @@ import java.util.Queue;
 public class TopKClosestPointsToOrigin {
 
     public int[][] kClosest(int[][] points, int k) {
-        Queue<int[]> maxheap = new PriorityQueue<>((a, b) -> getDistance(b) - getDistance(a));
+        Queue<int[]> maxHeap = new PriorityQueue<>((a, b) -> getDistance(b) - getDistance(a));
 
         for (int[] point: points) {
-            maxheap.offer(point);
+            maxHeap.offer(point);
 
-            if (maxheap.size() > k) {
-                maxheap.poll();
+            if (maxHeap.size() > k) {
+                maxHeap.poll();
             }
         }
 
-        int size = maxheap.size();
+        int size = maxHeap.size();
         int[][] res = new int[size][2];
 
         for (int i =0; i < size; i++) {
-            res[i] = maxheap.poll();
+            res[i] = maxHeap.poll();
         }
 
         return res;

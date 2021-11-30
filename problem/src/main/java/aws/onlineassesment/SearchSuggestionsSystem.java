@@ -1,14 +1,13 @@
 package aws.onlineassesment;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Collections;
 import java.util.LinkedList;
 import java.util.List;
 
 //https://leetcode.com/problems/search-suggestions-system/
 //https://leetcode.com/problems/search-suggestions-system/discuss/436151/JavaPython-3-Simple-Trie-and-Binary-Search-codes-w-comment-and-brief-analysis.
-public class SearchSuggestions_Using_Trie {
+public class SearchSuggestionsSystem {
     static class Trie {
         Trie[] children;
         LinkedList<String> suggestions;
@@ -22,24 +21,7 @@ public class SearchSuggestions_Using_Trie {
     public List<List<String>> suggestedProducts(String[] products, String searchWord) {
         Trie root = new Trie();
 
-        Arrays.sort(products);
-
-        for(String product: products){
-            Trie rootCopy = root;
-            char[] charArray = product.toCharArray();
-
-            for (char ch : charArray) {
-
-                if (rootCopy.children[ch - 'a'] == null) {
-                    rootCopy.children[ch - 'a'] = new Trie();
-                }
-                rootCopy = rootCopy.children[ch - 'a'];
-
-                if (rootCopy.suggestions.size() < 3) {
-                    rootCopy.suggestions.offer(product);
-                }
-            }
-        }
+        buildTrieWithSuggestions(products, root);
 
         List<List<String>> res = new ArrayList<>();
 
@@ -51,5 +33,24 @@ public class SearchSuggestions_Using_Trie {
         }
 
         return res;
+    }
+
+    private void buildTrieWithSuggestions(String[] products, Trie root) {
+        Trie node = root;
+
+        for (String product : products) {
+            for (int i = 0; i < product.length(); i++) {
+                char ch = product.charAt(i);
+
+                if (node.children[ch - 'a'] == null) {
+                    node.children[ch - 'a'] = new Trie();
+                }
+                node = node.children[ch - 'a'];
+
+                if (node.suggestions.size() < 3) {
+                    node.suggestions.offer(product);
+                }
+            }
+        }
     }
 }

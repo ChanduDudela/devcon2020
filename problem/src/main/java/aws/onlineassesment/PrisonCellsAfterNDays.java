@@ -2,15 +2,12 @@ package aws.onlineassesment;
 
 import java.util.Arrays;
 import java.util.HashSet;
-import java.util.List;
 import java.util.Set;
-import java.util.stream.Collectors;
 
 //https://leetcode.com/problems/prison-cells-after-n-days/
 public class PrisonCellsAfterNDays {
 
     public int[] prisonAfterNDays(int[] cells, int N) {
-
         Set<String> uniqueStrings = new HashSet<>();
 
         //counter to track which iteration the cycle is encountered
@@ -28,11 +25,10 @@ public class PrisonCellsAfterNDays {
                 hasCycle = true;
                 break;
             }
-
             cells = newVals;
         }
 
-        //If cycle was found, then just execute for N % count times (not the whole N times)
+        // If cycle was found, then just execute for N % count times (not the whole N times)
         if (hasCycle) {
             N = N % count;
             for (int i = 1; i <= N; i++) {

@@ -9,16 +9,19 @@ import java.util.Map;
 public class FavouriteGenre {
     /*
         invert map: song -> genre
-        groupby: user -> [genre, [song]]
+        groupBy: user -> [genre, [song]]
         count: user -> [genre, count]
         select having=max: user -> [genre]
 
         Input:
-        userMap = {
+        userMap =
+        {
            "David": ["song1", "song2", "song3", "song4", "song8"],
            "Emma":  ["song5", "song6", "song7"]
-        },
-        genreMap = {
+        }
+
+        genreMap =
+        {
            "Rock":    ["song1", "song3"],
            "Dubstep": ["song7"],
            "Techno":  ["song2", "song4"],

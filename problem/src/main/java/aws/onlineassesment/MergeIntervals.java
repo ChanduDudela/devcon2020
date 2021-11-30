@@ -6,6 +6,31 @@ import java.util.Collections;
 import java.util.List;
 
 public class MergeIntervals {
+    // optimal solution from Leetcode
+    public int[][] mergeOptimal(int[][] intervals) {
+        if (intervals.length <= 1) {
+            return intervals;
+        }
+        Arrays.sort(intervals, (arr1, arr2) -> Integer.compare(arr1[0], arr2[0]));
+
+        List<int[]> output_arr = new ArrayList<>();
+        int[] currentInterval = intervals[0];
+        output_arr.add(currentInterval);
+
+        for (int[] nextInterval : intervals) {
+            int current_end = currentInterval[1];
+            int next_begin = nextInterval[0];
+            int next_end = nextInterval[1];
+            if (current_end >= next_begin) {
+                currentInterval[1] = Math.max(current_end, next_end);
+            } else {
+                currentInterval = nextInterval;
+                output_arr.add(nextInterval);
+            }
+        }
+        return output_arr.toArray(new int[output_arr.size()][]);
+    }
+
     static class Interval implements Comparable<Interval> {
         int left;
         int right;
@@ -55,30 +80,5 @@ public class MergeIntervals {
         }
 
         return res;
-    }
-
-    // optimal solution from leetcode
-    public int[][] mergeOptimal(int[][] intervals) {
-        if (intervals.length <= 1) {
-            return intervals;
-        }
-        Arrays.sort(intervals, (arr1, arr2) -> Integer.compare(arr1[0], arr2[0]));
-
-        List<int[]> output_arr = new ArrayList<>();
-        int[] current_interval = intervals[0];
-        output_arr.add(current_interval);
-
-        for (int[] interval : intervals) {
-            int current_end = current_interval[1];
-            int next_begin = interval[0];
-            int next_end = interval[1];
-            if (current_end >= next_begin) {
-                current_interval[1] = Math.max(current_end, next_end);
-            } else {
-                current_interval = interval;
-                output_arr.add(interval);
-            }
-        }
-        return output_arr.toArray(new int[output_arr.size()][]);
     }
 }

@@ -25,8 +25,7 @@ public class CriticalConnections_TarjansAlgorithm {
 
         int[] discoveryTimeList = new int[n];   // discovery time of each node
         int[] lowKeyList = new int[n];          // to maintain lowest key of the node reachable from this node in DFS
-
-        boolean[] visitedList = new boolean[n];     // maintain visited flag for each node
+        boolean[] visitedList = new boolean[n]; // maintain visited flag for each node
         List<List<Integer>> output = new ArrayList<>();
 
         dfs(0, -1, discoveryTimeList, lowKeyList, visitedList, graph, output);

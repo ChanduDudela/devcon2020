@@ -18,7 +18,6 @@ public class FindIslands_2DArray_BFS {
 
         for (int i = 0; i < rows; i++) {
             for (int j = 0; j < columns; j++) {
-
                 if (grid[i][j] == '1') {
                     islandsQ.offer(new int[]{i, j});
                     bfs(grid, islandsQ);

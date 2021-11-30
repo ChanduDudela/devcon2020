@@ -34,4 +34,30 @@ public class PartitionLabels {
         result.add(lastIndex + 1);
         partitionRecursive(str.substring(lastIndex + 1), result);
     }
+
+    // From Leetcode discussion - O(N) time
+    public List<Integer> partitionLabels_LinearTime(String S) {
+        // get the last seen index for each letter 'a' - 'z'
+        int[] last = new int[26];
+        for (int i = 0; i < S.length(); ++i) {
+            last[S.charAt(i) - 'a'] = i;
+        }
+
+        int boundary = 0, size = 0;
+        List<Integer> ans = new ArrayList<>();
+        for (int i = 0; i < S.length(); i++) {
+            char curChar = S.charAt(i);
+
+            // update boundary and size along the way
+            size++;
+            boundary = Math.max(boundary, last[curChar - 'a']);
+
+            // if we reach the boundary, we collect result and reset count to 0
+            if (i == boundary) {
+                ans.add(size);
+                size = 0;
+            }
+        }
+        return ans;
+    }
 }

@@ -7,14 +7,11 @@ public class MaximumAverageSubTree {
     double rootWithMaxAvg = Integer.MIN_VALUE;
 
     public double maximumAverageSubtree(TreeNode root) {
-
         getAverageWeight(root);
-
         return rootWithMaxAvg;
     }
 
     private int[] getAverageWeight(TreeNode root) {
-
         if(root == null) {
             return new int[]{0,0};
         }
