@@ -1,0 +1,27 @@
+### Actors in the system
+- City
+    - has many hotels
+- Hotel
+    - Address
+    - Many Floors
+    - Many Rooms
+    - Many Customers
+- Room contains Customer
+    - SingleRoom - class
+    - DoubleRoom - class
+    - SuiteRoom - class
+- Customer
+    - Name
+    - Identification
+    - Single
+    - Group
+- PaymentDetail
+    - PaymentType
+    - Duration of Stay
+    - Total charge
+- PaymentType
+    - Cash
+    - DebitCard
+    - CreditCard
+- Booking
+    - Customer - Hotel - Room mapping
