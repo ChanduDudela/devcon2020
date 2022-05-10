@@ -61,8 +61,6 @@ class LRU_Cache {
             moveToTop(entry);
         } else {
             Entry newEntry = new Entry(key, value);
-            newEntry.left = null;
-            newEntry.right = null;
 
             if (map.size() == MAX_CAPACITY) {
                 map.remove(end.key);

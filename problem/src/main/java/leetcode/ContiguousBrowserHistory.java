@@ -14,41 +14,36 @@ package leetcode;
 // user4 = ["/pink", "/orange", "/amber", "/BritishRacingGreen", "/plum", "/blue", "/tan", "/red", "/lavender", "/HotRodPink", "/CornflowerBlue", "/LightGoldenRodYellow"]
 // user5 = ["a"]
 
-import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
+import java.util.Objects;
 
 // Sample output:
 // findContiguousHistory(user0, user1)
 // /pink, /register, /orange
 public class ContiguousBrowserHistory {
-    static List<String> findContiguousHistory(String[] user1, String[] user2) {
-        List<String> result = new ArrayList<>();
-        int max = Integer.MIN_VALUE;
-        int endIndex = -1;
-        int[][] dp = new int[user1.length+1][user2.length+1];
+    private static List<String> findContiguousHistory(String[] a, String[] b) {
+        //Fill up DP table.
+        int[][] dp = new int[a.length+1][b.length+1];
 
-        for (int i = user1.length-1; i >=0; i--) {
-            for (int j = user2.length-1; j >=0 ; j--) {
-                if (user1[i].equalsIgnoreCase(user2[j])) {
-                    dp[i][j] = dp[i+1][j+1] + 1;
+        int maxLength = 0;
+        int maxUserinA = -1;
 
-                    if (max < dp[i][j]) {
-                        max = dp[i][j];
-                        endIndex = j;
+        for(int i=1; i<=a.length; i++) {
+            for (int j=1; j<=b.length; j++) {
+
+                if (Objects.equals(a[i - 1], b[j - 1])) {
+                    dp[i][j] = dp[i - 1][j - 1] + 1;
+
+                    if(dp[i][j] > maxLength) {
+                        maxUserinA = i;
+                        maxLength = dp[i][j];
                     }
-                    break;
+                } else {
+                    dp[i][j] = 0;
                 }
             }
         }
-
-        if (max == Integer.MIN_VALUE) {
-            return result;
-        } else {
-            for(int i = endIndex; i < max + endIndex; i++) {
-                result.add(user2[i]);
-            }
-        }
-
-        return result;
+        return Arrays.asList(a).subList(maxUserinA-maxLength, maxUserinA);
     }
 }

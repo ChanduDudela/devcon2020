@@ -2,7 +2,7 @@ package leetcode;
 
 import java.util.Stack;
 
-//https://leetcode.com/problems/binary-search-tree-iterator (IN-ORDER => root - left - right)
+//https://leetcode.com/problems/binary-search-tree-iterator (IN-ORDER => left - root - right)
 // there is another approach of flattening the tree into an array.
 // See first approach in the solutions tab.
 public class BSTIterator {
