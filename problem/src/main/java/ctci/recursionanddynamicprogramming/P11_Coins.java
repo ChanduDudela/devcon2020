@@ -8,10 +8,10 @@ public class P11_Coins {
     //  2 [                ]
     //  3 [                ]
     //  4 [                ]
-    int makeChange(int totalCoins, int[] denoms) {
+    int makeChange(int amountTotal, int[] denoms) {
         //cache
-        int[][] cache = new int[totalCoins + 1][denoms.length];
-        return makeChange(totalCoins, denoms, 0, cache);
+        int[][] cache = new int[amountTotal + 1][denoms.length];
+        return makeChange(amountTotal, denoms, 0, cache);
     }
 
     int makeChange(int total, int[] denoms, int index, int[][] cache) {

@@ -1,6 +1,7 @@
 package leetcode;
 
 import java.util.Arrays;
+import java.util.Comparator;
 
 /**
  * Given an array of meeting time intervals consisting of start and end times [s1, e1], [s2, e2], ... ,
@@ -16,7 +17,7 @@ public class MeetingRoom_1_easy {
 
     public boolean canAttendMeetings(int[][] intervals) {
         // Sort by the meeting start times
-        Arrays.sort(intervals, (slot1, slot2) -> slot1[0] - slot2[0]);
+        Arrays.sort(intervals, Comparator.comparingInt(slot -> slot[0]));
 
         for (int i = 0; i < intervals.length - 1; i++) {
             if (intervals[i][1] > intervals[i + 1][0]) {

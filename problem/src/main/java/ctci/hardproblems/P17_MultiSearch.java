@@ -16,7 +16,7 @@ public class P17_MultiSearch {
         }
     }
 
-    static class TrieNode {
+    public static class TrieNode {
         HashMap<Character, TrieNode> children;
 
         public TrieNode() {

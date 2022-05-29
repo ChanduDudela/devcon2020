@@ -28,7 +28,7 @@ public class Merge2SortedLists {
 
     public static class ListNode {
         int val;
-        ListNode next;
+        public ListNode next;
 
         ListNode() {
         }

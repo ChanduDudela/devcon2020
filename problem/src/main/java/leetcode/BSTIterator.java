@@ -15,7 +15,7 @@ public class BSTIterator {
         TreeNode() {
         }
 
-        TreeNode(int val) {
+        public TreeNode(int val) {
             this.val = val;
         }
 
